@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <None Include="..\..\NewRPG.uproject" />
+    <Filter Include="Source">
+      <UniqueIdentifier>{F31BBDD1-B3E8-3BCC-9652-680E16935819}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\NewRPG.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\Source\NewRPGEditor.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <Filter Include="Config">
+      <UniqueIdentifier>{FA535FFB-25E1-3D20-B416-52F9BE21E06E}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Config\DefaultEditor.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEditorPerProjectUserSettings.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEngine.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultGame.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultInput.ini">
+      <Filter>Config</Filter>
+    </None>
+    <Filter Include="Source\NewRPG">
+      <UniqueIdentifier>{F9C25DE4-61DB-3A80-8A97-39E99355C1DD}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\NewRPG\NewRPG.Build.cs">
+      <Filter>Source\NewRPG</Filter>
+    </None>
+    <ClCompile Include="..\..\Source\NewRPG\NewRPG.cpp">
+      <Filter>Source\NewRPG</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\NewRPG\NewRPG.h">
+      <Filter>Source\NewRPG</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\NewRPG\NewRPGCharacter.cpp">
+      <Filter>Source\NewRPG</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\NewRPG\NewRPGCharacter.h">
+      <Filter>Source\NewRPG</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\NewRPG\NewRPGGameMode.cpp">
+      <Filter>Source\NewRPG</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\NewRPG\NewRPGGameMode.h">
+      <Filter>Source\NewRPG</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\NewRPG\NewRPGPlayerController.cpp">
+      <Filter>Source\NewRPG</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\NewRPG\NewRPGPlayerController.h">
+      <Filter>Source\NewRPG</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

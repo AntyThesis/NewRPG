@@ -1,0 +1,8 @@
+{
+	"SourceFiles": [
+		"D:\\Unreal Projects\\NewRPG\\Source\\NewRPG\\NewRPG.Build.cs",
+		"D:\\Unreal Projects\\NewRPG\\Source\\NewRPG.Target.cs",
+		"D:\\Unreal Projects\\NewRPG\\Source\\NewRPGEditor.Target.cs"
+	],
+	"EngineVersion": "5.5.3"
+}

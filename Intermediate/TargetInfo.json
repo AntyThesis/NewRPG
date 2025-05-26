@@ -1,0 +1,14 @@
+{
+	"Targets": [
+		{
+			"Name": "NewRPG",
+			"Path": "..\\Source\\NewRPG.Target.cs",
+			"Type": "Game"
+		},
+		{
+			"Name": "NewRPGEditor",
+			"Path": "..\\Source\\NewRPGEditor.Target.cs",
+			"Type": "Editor"
+		}
+	]
+}
