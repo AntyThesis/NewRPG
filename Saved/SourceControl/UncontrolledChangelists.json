@@ -5,7 +5,26 @@
 			"guid": "00000000000000000000000000000000",
 			"description": "Default Uncontrolled Changelist",
 			"files": [
-				"D:/Unreal Projects/NewRPG/Content/StarterContent/Architecture/Floor_400x400.uasset"
+				"D:/Unreal Projects/NewRPG/Content/StarterContent/Architecture/Floor_400x400.uasset",
+				"D:/Unreal Projects/NewRPG/Content/TopDown/Blueprints/BP_TopDownCharacter.uasset",
+				"D:/Unreal Projects/NewRPG/Content/TopDown/Blueprints/WBP_HealthBar.uasset",
+				"D:/Unreal Projects/NewRPG/Content/TopDown/Blueprints/WBP_HUD.uasset",
+				"D:/Unreal Projects/NewRPG/Content/TopDown/Blueprints/BP_ItemBase.uasset",
+				"D:/Unreal Projects/NewRPG/Content/TopDown/Blueprints/BP_Spawner.uasset",
+				"D:/Unreal Projects/NewRPG/Content/__ExternalActors__/TopDown/Maps/TopDownMap/5/JD/J42ONB9JBY7JAFBGV2NVLD.uasset",
+				"D:/Unreal Projects/NewRPG/Content/__ExternalActors__/TopDown/Maps/TopDownMap/3/A8/A57UZ9ECYVTG127QTEQBZY.uasset",
+				"D:/Unreal Projects/NewRPG/Content/TopDown/Blueprints/BP_BaseSpellClass.uasset",
+				"D:/Unreal Projects/NewRPG/Content/TopDown/Blueprints/BP_TopDownPlayerController.uasset",
+				"D:/Unreal Projects/NewRPG/Content/__ExternalActors__/TopDown/Maps/TopDownMap/B/LK/3PG5GRV3L8XQAI8LCRWTGO.uasset",
+				"D:/Unreal Projects/NewRPG/Content/__ExternalActors__/TopDown/Maps/TopDownMap/3/YY/QZSKQSC4T2UWA3WCYYC0ON.uasset",
+				"D:/Unreal Projects/NewRPG/Content/__ExternalActors__/TopDown/Maps/TopDownMap/D/82/H4FNRUEMK2YDRY7ZCOB8OK.uasset",
+				"D:/Unreal Projects/NewRPG/Content/__ExternalActors__/TopDown/Maps/TopDownMap/9/KH/Z5FWJ1RC8SM0KP7H52AYUN.uasset",
+				"D:/Unreal Projects/NewRPG/Content/TopDown/Blueprints/SPawner.uasset",
+				"D:/Unreal Projects/NewRPG/Content/__ExternalActors__/TopDown/Maps/TopDownMap/E/YW/YR4O27ZID9Y5TCFOC2ZX5R.uasset",
+				"D:/Unreal Projects/NewRPG/Content/TopDown/Blueprints/MyMyActor2.uasset",
+				"D:/Unreal Projects/NewRPG/Content/__ExternalActors__/TopDown/Maps/TopDownMap/0/32/4YAR64RBNXA5BUI87SCYLO.uasset",
+				"D:/Unreal Projects/NewRPG/Content/__ExternalActors__/TopDown/Maps/TopDownMap/0/P3/E2U6U8ZZLTSVN6XPG9043T.uasset",
+				"D:/Unreal Projects/NewRPG/Content/__ExternalActors__/TopDown/Maps/TopDownMap/7/TW/VO6BBOAGMHLBHOQGPCFR28.uasset"
 			]
 		}
 	]

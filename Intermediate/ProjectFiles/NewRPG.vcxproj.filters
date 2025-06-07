@@ -11,6 +11,10 @@
     <None Include="..\..\Source\NewRPGEditor.Target.cs">
       <Filter>Source</Filter>
     </None>
+    <None Include="..\..\.gitattributes" />
+    <None Include="..\..\.gitignore" />
+    <None Include="..\..\.vsconfig" />
+    <None Include="..\..\LICENSE.txt" />
     <Filter Include="Config">
       <UniqueIdentifier>{FA535FFB-25E1-3D20-B416-52F9BE21E06E}</UniqueIdentifier>
     </Filter>
@@ -32,6 +36,36 @@
     <Filter Include="Source\NewRPG">
       <UniqueIdentifier>{F9C25DE4-61DB-3A80-8A97-39E99355C1DD}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="..\..\Source\NewRPG\BasicSpellComponent.cpp">
+      <Filter>Source\NewRPG</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\NewRPG\BasicSpellComponent.h">
+      <Filter>Source\NewRPG</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\NewRPG\FItemStruct.cpp">
+      <Filter>Source\NewRPG</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\NewRPG\FItemStruct.h">
+      <Filter>Source\NewRPG</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\NewRPG\HealthComponent.cpp">
+      <Filter>Source\NewRPG</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\NewRPG\HealthComponent.h">
+      <Filter>Source\NewRPG</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\NewRPG\InventoryComponent.cpp">
+      <Filter>Source\NewRPG</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\NewRPG\InventoryComponent.h">
+      <Filter>Source\NewRPG</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\NewRPG\ItemBase.cpp">
+      <Filter>Source\NewRPG</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\NewRPG\ItemBase.h">
+      <Filter>Source\NewRPG</Filter>
+    </ClCompile>
     <None Include="..\..\Source\NewRPG\NewRPG.Build.cs">
       <Filter>Source\NewRPG</Filter>
     </None>

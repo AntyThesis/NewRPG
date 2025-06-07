@@ -10,6 +10,8 @@
 #include "GameFramework/SpringArmComponent.h"
 #include "Materials/Material.h"
 #include "Engine/World.h"
+#include "HealthComponent.h"
+#include "InventoryComponent.h"
 
 ANewRPGCharacter::ANewRPGCharacter()
 {
@@ -43,6 +45,14 @@ ANewRPGCharacter::ANewRPGCharacter()
 	// Activate ticking in order to update the cursor every frame.
 	PrimaryActorTick.bCanEverTick = true;
 	PrimaryActorTick.bStartWithTickEnabled = true;
+
+
+	HealthComponent = CreateDefaultSubobject<UHealthComponent>(TEXT("HealthComponent"));
+
+	InventoryComponent = CreateDefaultSubobject<UInventoryComponent>(TEXT("InventoryComponent"));
+
+
+
 }
 
 void ANewRPGCharacter::Tick(float DeltaSeconds)

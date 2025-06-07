@@ -6,6 +6,9 @@
 #include "GameFramework/Character.h"
 #include "NewRPGCharacter.generated.h"
 
+class UHealthComponent;
+class UInventoryComponent;
+
 UCLASS(Blueprintable)
 class ANewRPGCharacter : public ACharacter
 {
@@ -13,6 +16,13 @@ class ANewRPGCharacter : public ACharacter
 
 public:
 	ANewRPGCharacter();
+
+	UPROPERTY(VisibleAnywhere,BlueprintReadOnly)
+	UHealthComponent* HealthComponent;
+
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	UInventoryComponent* InventoryComponent;
 
 	// Called every frame.
 	virtual void Tick(float DeltaSeconds) override;
