@@ -42,6 +42,12 @@
     <ClCompile Include="..\..\Source\NewRPG\BasicSpellComponent.h">
       <Filter>Source\NewRPG</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\NewRPG\EXPComponent.cpp">
+      <Filter>Source\NewRPG</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\NewRPG\EXPComponent.h">
+      <Filter>Source\NewRPG</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\NewRPG\FItemStruct.cpp">
       <Filter>Source\NewRPG</Filter>
     </ClCompile>
