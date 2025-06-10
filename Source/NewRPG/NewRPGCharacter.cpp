@@ -12,6 +12,7 @@
 #include "Engine/World.h"
 #include "HealthComponent.h"
 #include "InventoryComponent.h"
+#include "ManaComponent.h"
 
 ANewRPGCharacter::ANewRPGCharacter()
 {
@@ -50,6 +51,8 @@ ANewRPGCharacter::ANewRPGCharacter()
 	HealthComponent = CreateDefaultSubobject<UHealthComponent>(TEXT("HealthComponent"));
 
 	InventoryComponent = CreateDefaultSubobject<UInventoryComponent>(TEXT("InventoryComponent"));
+
+	ManaComponent = CreateDefaultSubobject<UManaComponent>(TEXT("Bitchin Mana Component"));
 
 
 

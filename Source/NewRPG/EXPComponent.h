@@ -7,6 +7,7 @@
 #include "EXPComponent.generated.h"
 
 DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnEXPEarned);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnLevelUp);
 
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
 class NEWRPG_API UEXPComponent : public UActorComponent
@@ -19,6 +20,9 @@ public:
 
 	UPROPERTY(BlueprintAssignable)
 	FOnEXPEarned OnEXPEarned;
+
+	UPROPERTY(BlueprintAssignable)
+	FOnLevelUp OnLevelUp;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Experience Stats")
 	float CurrentEXP;

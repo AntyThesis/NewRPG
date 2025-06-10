@@ -8,6 +8,7 @@
 
 class UHealthComponent;
 class UInventoryComponent;
+class UManaComponent;
 
 UCLASS(Blueprintable)
 class ANewRPGCharacter : public ACharacter
@@ -19,6 +20,9 @@ public:
 
 	UPROPERTY(VisibleAnywhere,BlueprintReadOnly)
 	UHealthComponent* HealthComponent;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	UManaComponent* ManaComponent;
 
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)

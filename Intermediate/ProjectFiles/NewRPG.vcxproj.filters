@@ -72,6 +72,12 @@
     <ClCompile Include="..\..\Source\NewRPG\ItemBase.h">
       <Filter>Source\NewRPG</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\NewRPG\ManaComponent.cpp">
+      <Filter>Source\NewRPG</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\NewRPG\ManaComponent.h">
+      <Filter>Source\NewRPG</Filter>
+    </ClCompile>
     <None Include="..\..\Source\NewRPG\NewRPG.Build.cs">
       <Filter>Source\NewRPG</Filter>
     </None>

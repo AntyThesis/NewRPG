@@ -18,12 +18,16 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 NEWRPG_API void FOnEXPEarned_DelegateWrapper(const FMulticastScriptDelegate& OnEXPEarned);
 
 
-#define FID_Unreal_Projects_NewRPG_Source_NewRPG_EXPComponent_h_14_RPC_WRAPPERS_NO_PURE_DECLS \
+#define FID_Unreal_Projects_NewRPG_Source_NewRPG_EXPComponent_h_10_DELEGATE \
+NEWRPG_API void FOnLevelUp_DelegateWrapper(const FMulticastScriptDelegate& OnLevelUp);
+
+
+#define FID_Unreal_Projects_NewRPG_Source_NewRPG_EXPComponent_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
 	DECLARE_FUNCTION(execLevelUp); \
 	DECLARE_FUNCTION(execEarnEXP);
 
 
-#define FID_Unreal_Projects_NewRPG_Source_NewRPG_EXPComponent_h_14_INCLASS_NO_PURE_DECLS \
+#define FID_Unreal_Projects_NewRPG_Source_NewRPG_EXPComponent_h_15_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesUEXPComponent(); \
 	friend struct Z_Construct_UClass_UEXPComponent_Statics; \
@@ -32,7 +36,7 @@ public: \
 	DECLARE_SERIALIZER(UEXPComponent)
 
 
-#define FID_Unreal_Projects_NewRPG_Source_NewRPG_EXPComponent_h_14_ENHANCED_CONSTRUCTORS \
+#define FID_Unreal_Projects_NewRPG_Source_NewRPG_EXPComponent_h_15_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	UEXPComponent(UEXPComponent&&); \
@@ -44,13 +48,13 @@ public: \
 	NO_API virtual ~UEXPComponent();
 
 
-#define FID_Unreal_Projects_NewRPG_Source_NewRPG_EXPComponent_h_11_PROLOG
-#define FID_Unreal_Projects_NewRPG_Source_NewRPG_EXPComponent_h_14_GENERATED_BODY \
+#define FID_Unreal_Projects_NewRPG_Source_NewRPG_EXPComponent_h_12_PROLOG
+#define FID_Unreal_Projects_NewRPG_Source_NewRPG_EXPComponent_h_15_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_Unreal_Projects_NewRPG_Source_NewRPG_EXPComponent_h_14_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_Unreal_Projects_NewRPG_Source_NewRPG_EXPComponent_h_14_INCLASS_NO_PURE_DECLS \
-	FID_Unreal_Projects_NewRPG_Source_NewRPG_EXPComponent_h_14_ENHANCED_CONSTRUCTORS \
+	FID_Unreal_Projects_NewRPG_Source_NewRPG_EXPComponent_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Unreal_Projects_NewRPG_Source_NewRPG_EXPComponent_h_15_INCLASS_NO_PURE_DECLS \
+	FID_Unreal_Projects_NewRPG_Source_NewRPG_EXPComponent_h_15_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 

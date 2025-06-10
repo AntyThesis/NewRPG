@@ -14,6 +14,7 @@ ENGINE_API UClass* Z_Construct_UClass_UActorComponent();
 NEWRPG_API UClass* Z_Construct_UClass_UEXPComponent();
 NEWRPG_API UClass* Z_Construct_UClass_UEXPComponent_NoRegister();
 NEWRPG_API UFunction* Z_Construct_UDelegateFunction_NewRPG_OnEXPEarned__DelegateSignature();
+NEWRPG_API UFunction* Z_Construct_UDelegateFunction_NewRPG_OnLevelUp__DelegateSignature();
 UPackage* Z_Construct_UPackage__Script_NewRPG();
 // End Cross Module References
 
@@ -42,6 +43,32 @@ void FOnEXPEarned_DelegateWrapper(const FMulticastScriptDelegate& OnEXPEarned)
 	OnEXPEarned.ProcessMulticastDelegate<UObject>(NULL);
 }
 // End Delegate FOnEXPEarned
+
+// Begin Delegate FOnLevelUp
+struct Z_Construct_UDelegateFunction_NewRPG_OnLevelUp__DelegateSignature_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "EXPComponent.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FFunctionParams Z_Construct_UDelegateFunction_NewRPG_OnLevelUp__DelegateSignature_Statics::FuncParams = { (UObject*(*)())Z_Construct_UPackage__Script_NewRPG, nullptr, "OnLevelUp__DelegateSignature", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00130000, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UDelegateFunction_NewRPG_OnLevelUp__DelegateSignature_Statics::Function_MetaDataParams), Z_Construct_UDelegateFunction_NewRPG_OnLevelUp__DelegateSignature_Statics::Function_MetaDataParams) };
+UFunction* Z_Construct_UDelegateFunction_NewRPG_OnLevelUp__DelegateSignature()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UDelegateFunction_NewRPG_OnLevelUp__DelegateSignature_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+void FOnLevelUp_DelegateWrapper(const FMulticastScriptDelegate& OnLevelUp)
+{
+	OnLevelUp.ProcessMulticastDelegate<UObject>(NULL);
+}
+// End Delegate FOnLevelUp
 
 // Begin Class UEXPComponent Function EarnEXP
 struct Z_Construct_UFunction_UEXPComponent_EarnEXP_Statics
@@ -141,6 +168,9 @@ struct Z_Construct_UClass_UEXPComponent_Statics
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_OnEXPEarned_MetaData[] = {
 		{ "ModuleRelativePath", "EXPComponent.h" },
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_OnLevelUp_MetaData[] = {
+		{ "ModuleRelativePath", "EXPComponent.h" },
+	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_CurrentEXP_MetaData[] = {
 		{ "Category", "Experience Stats" },
 		{ "ModuleRelativePath", "EXPComponent.h" },
@@ -159,6 +189,7 @@ struct Z_Construct_UClass_UEXPComponent_Statics
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FMulticastDelegatePropertyParams NewProp_OnEXPEarned;
+	static const UECodeGen_Private::FMulticastDelegatePropertyParams NewProp_OnLevelUp;
 	static const UECodeGen_Private::FFloatPropertyParams NewProp_CurrentEXP;
 	static const UECodeGen_Private::FFloatPropertyParams NewProp_MaxEXP;
 	static const UECodeGen_Private::FFloatPropertyParams NewProp_RequiredEXP;
@@ -176,12 +207,14 @@ struct Z_Construct_UClass_UEXPComponent_Statics
 	static const UECodeGen_Private::FClassParams ClassParams;
 };
 const UECodeGen_Private::FMulticastDelegatePropertyParams Z_Construct_UClass_UEXPComponent_Statics::NewProp_OnEXPEarned = { "OnEXPEarned", nullptr, (EPropertyFlags)0x0010000010080000, UECodeGen_Private::EPropertyGenFlags::InlineMulticastDelegate, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UEXPComponent, OnEXPEarned), Z_Construct_UDelegateFunction_NewRPG_OnEXPEarned__DelegateSignature, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_OnEXPEarned_MetaData), NewProp_OnEXPEarned_MetaData) }; // 2352271353
+const UECodeGen_Private::FMulticastDelegatePropertyParams Z_Construct_UClass_UEXPComponent_Statics::NewProp_OnLevelUp = { "OnLevelUp", nullptr, (EPropertyFlags)0x0010000010080000, UECodeGen_Private::EPropertyGenFlags::InlineMulticastDelegate, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UEXPComponent, OnLevelUp), Z_Construct_UDelegateFunction_NewRPG_OnLevelUp__DelegateSignature, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_OnLevelUp_MetaData), NewProp_OnLevelUp_MetaData) }; // 2424056407
 const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_UEXPComponent_Statics::NewProp_CurrentEXP = { "CurrentEXP", nullptr, (EPropertyFlags)0x0010000000020015, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UEXPComponent, CurrentEXP), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_CurrentEXP_MetaData), NewProp_CurrentEXP_MetaData) };
 const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_UEXPComponent_Statics::NewProp_MaxEXP = { "MaxEXP", nullptr, (EPropertyFlags)0x0010000000020015, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UEXPComponent, MaxEXP), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_MaxEXP_MetaData), NewProp_MaxEXP_MetaData) };
 const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_UEXPComponent_Statics::NewProp_RequiredEXP = { "RequiredEXP", nullptr, (EPropertyFlags)0x0010000000020015, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UEXPComponent, RequiredEXP), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_RequiredEXP_MetaData), NewProp_RequiredEXP_MetaData) };
 const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_UEXPComponent_Statics::NewProp_Level = { "Level", nullptr, (EPropertyFlags)0x0010000000020015, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UEXPComponent, Level), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Level_MetaData), NewProp_Level_MetaData) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UEXPComponent_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UEXPComponent_Statics::NewProp_OnEXPEarned,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UEXPComponent_Statics::NewProp_OnLevelUp,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UEXPComponent_Statics::NewProp_CurrentEXP,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UEXPComponent_Statics::NewProp_MaxEXP,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UEXPComponent_Statics::NewProp_RequiredEXP,
@@ -228,10 +261,10 @@ UEXPComponent::~UEXPComponent() {}
 struct Z_CompiledInDeferFile_FID_Unreal_Projects_NewRPG_Source_NewRPG_EXPComponent_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UEXPComponent, UEXPComponent::StaticClass, TEXT("UEXPComponent"), &Z_Registration_Info_UClass_UEXPComponent, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UEXPComponent), 3895395199U) },
+		{ Z_Construct_UClass_UEXPComponent, UEXPComponent::StaticClass, TEXT("UEXPComponent"), &Z_Registration_Info_UClass_UEXPComponent, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UEXPComponent), 2925974346U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Unreal_Projects_NewRPG_Source_NewRPG_EXPComponent_h_3579862240(TEXT("/Script/NewRPG"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Unreal_Projects_NewRPG_Source_NewRPG_EXPComponent_h_853374125(TEXT("/Script/NewRPG"),
 	Z_CompiledInDeferFile_FID_Unreal_Projects_NewRPG_Source_NewRPG_EXPComponent_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Unreal_Projects_NewRPG_Source_NewRPG_EXPComponent_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

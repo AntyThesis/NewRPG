@@ -26,7 +26,7 @@ UEXPComponent::UEXPComponent()
 void UEXPComponent::BeginPlay()
 {
 	Super::BeginPlay();
-	EarnEXP(300.f);
+	EarnEXP(126.f);
 	// ...
 	
 }
@@ -58,7 +58,8 @@ void UEXPComponent::EarnEXP(float EXPToEarn) {
 
 void UEXPComponent::LevelUp() {
 	CurrentEXP = 0;
-	RequiredEXP = RequiredEXP * 2;
+	MaxEXP = MaxEXP * 2;
 	Level++;
+	OnLevelUp.Broadcast();
 	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Yellow,FString::Printf(TEXT("Level Up! New Level is: %i"), Level));
 }
