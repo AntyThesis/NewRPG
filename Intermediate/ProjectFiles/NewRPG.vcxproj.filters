@@ -42,6 +42,12 @@
     <ClCompile Include="..\..\Source\NewRPG\BasicSpellComponent.h">
       <Filter>Source\NewRPG</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\NewRPG\EnemyBase.cpp">
+      <Filter>Source\NewRPG</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\NewRPG\EnemyBase.h">
+      <Filter>Source\NewRPG</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\NewRPG\EXPComponent.cpp">
       <Filter>Source\NewRPG</Filter>
     </ClCompile>
@@ -58,6 +64,12 @@
       <Filter>Source\NewRPG</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\NewRPG\HealthComponent.h">
+      <Filter>Source\NewRPG</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\NewRPG\Interactable.cpp">
+      <Filter>Source\NewRPG</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\NewRPG\Interactable.h">
       <Filter>Source\NewRPG</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\NewRPG\InventoryComponent.cpp">

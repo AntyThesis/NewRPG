@@ -40,6 +40,7 @@ void UHealthComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActo
 	// ...
 }
 
+// Define the AffectHealth() function
 void UHealthComponent::AffectHealth(float HealthChangeAmount){
 	CurrentHealth += HealthChangeAmount;
 	CurrentHealth = FMath::Clamp(CurrentHealth, 0, MaxHealth);

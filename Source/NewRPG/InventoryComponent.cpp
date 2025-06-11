@@ -38,7 +38,7 @@ void UInventoryComponent::TickComponent(float DeltaTime, ELevelTick TickType, FA
 }
 
 
-
+// Add an item to the inventory if there is room
 void UInventoryComponent::AddItemToInventory(AItemBase* ItemToBeAdded) {
 
 	if (ItemToBeAdded) {
@@ -63,6 +63,8 @@ void UInventoryComponent::AddItemToInventory(AItemBase* ItemToBeAdded) {
 
 }
 
+
+// Remove Item from the inventory
 void UInventoryComponent::RemoveItemFromInventory( AItemBase* ItemToBeRemoved) {
 	if (ItemToBeRemoved) {
 		Items.Remove(ItemToBeRemoved);

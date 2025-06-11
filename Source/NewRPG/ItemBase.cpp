@@ -34,7 +34,7 @@ AItemBase::AItemBase()
 	CollisionBox->SetupAttachment(StaticMeshComponent);
 
 	
-	CollisionBox->OnComponentBeginOverlap.AddDynamic(this, &AItemBase::OnOverlapBegin);
+	//CollisionBox->OnComponentBeginOverlap.AddDynamic(this, &AItemBase::OnOverlapBegin);
 
 	
 
@@ -59,7 +59,7 @@ void AItemBase::Tick(float DeltaTime)
 
 }
 
-void AItemBase::OnOverlapBegin(UPrimitiveComponent* OverlappedComp, AActor* OtherActor,
+/*void AItemBase::OnOverlapBegin(UPrimitiveComponent* OverlappedComp, AActor* OtherActor,
 	UPrimitiveComponent* OtherComp, int32 OtherBodyIndex,
 	bool bFromSweep, const FHitResult& SweepResult) {
 	if (OtherActor) {
@@ -69,13 +69,13 @@ void AItemBase::OnOverlapBegin(UPrimitiveComponent* OverlappedComp, AActor* Othe
 		PickedUp();
 	
 		
-		/*if (GEngine) {
+		if (GEngine) {
 			GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Blue, FString::Printf(TEXT("Actor Name:%s"), *GetName()));
 		}
-		*/
+		
 	}
 	
-}
+}*/
 
 
 
@@ -86,4 +86,14 @@ void AItemBase::PickedUp() {
 
 	CollisionBox->SetCollisionEnabled(ECollisionEnabled::NoCollision);
 	
+}
+
+
+// Implement the Interact() function from the Interactable Interface
+void AItemBase::Interact(ANewRPGCharacter* InteractingCharacter) {
+	if (InteractingCharacter->InventoryComponent->Items.Num() < 3) {
+
+		InteractingCharacter->InventoryComponent->AddItemToInventory(this);
+		PickedUp();
+	}
 }

@@ -9,29 +9,28 @@
 #include "UObject/ScriptMacros.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
-class AActor;
-class UPrimitiveComponent;
-struct FHitResult;
+class ANewRPGCharacter;
 #ifdef NEWRPG_ItemBase_generated_h
 #error "ItemBase.generated.h already included, missing '#pragma once' in ItemBase.h"
 #endif
 #define NEWRPG_ItemBase_generated_h
 
-#define FID_Unreal_Projects_NewRPG_Source_NewRPG_ItemBase_h_18_RPC_WRAPPERS_NO_PURE_DECLS \
-	DECLARE_FUNCTION(execOnOverlapBegin); \
+#define FID_Unreal_Projects_NewRPG_Source_NewRPG_ItemBase_h_19_RPC_WRAPPERS_NO_PURE_DECLS \
+	DECLARE_FUNCTION(execInteract); \
 	DECLARE_FUNCTION(execPickedUp);
 
 
-#define FID_Unreal_Projects_NewRPG_Source_NewRPG_ItemBase_h_18_INCLASS_NO_PURE_DECLS \
+#define FID_Unreal_Projects_NewRPG_Source_NewRPG_ItemBase_h_19_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAItemBase(); \
 	friend struct Z_Construct_UClass_AItemBase_Statics; \
 public: \
 	DECLARE_CLASS(AItemBase, AActor, COMPILED_IN_FLAGS(0 | CLASS_Config), CASTCLASS_None, TEXT("/Script/NewRPG"), NO_API) \
-	DECLARE_SERIALIZER(AItemBase)
+	DECLARE_SERIALIZER(AItemBase) \
+	virtual UObject* _getUObject() const override { return const_cast<AItemBase*>(this); }
 
 
-#define FID_Unreal_Projects_NewRPG_Source_NewRPG_ItemBase_h_18_ENHANCED_CONSTRUCTORS \
+#define FID_Unreal_Projects_NewRPG_Source_NewRPG_ItemBase_h_19_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	AItemBase(AItemBase&&); \
@@ -43,13 +42,13 @@ public: \
 	NO_API virtual ~AItemBase();
 
 
-#define FID_Unreal_Projects_NewRPG_Source_NewRPG_ItemBase_h_15_PROLOG
-#define FID_Unreal_Projects_NewRPG_Source_NewRPG_ItemBase_h_18_GENERATED_BODY \
+#define FID_Unreal_Projects_NewRPG_Source_NewRPG_ItemBase_h_16_PROLOG
+#define FID_Unreal_Projects_NewRPG_Source_NewRPG_ItemBase_h_19_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_Unreal_Projects_NewRPG_Source_NewRPG_ItemBase_h_18_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_Unreal_Projects_NewRPG_Source_NewRPG_ItemBase_h_18_INCLASS_NO_PURE_DECLS \
-	FID_Unreal_Projects_NewRPG_Source_NewRPG_ItemBase_h_18_ENHANCED_CONSTRUCTORS \
+	FID_Unreal_Projects_NewRPG_Source_NewRPG_ItemBase_h_19_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Unreal_Projects_NewRPG_Source_NewRPG_ItemBase_h_19_INCLASS_NO_PURE_DECLS \
+	FID_Unreal_Projects_NewRPG_Source_NewRPG_ItemBase_h_19_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
