@@ -14,6 +14,10 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define NEWRPG_NewRPGCharacter_generated_h
 
+#define FID_Unreal_Projects_NewRPG_Source_NewRPG_NewRPGCharacter_h_16_RPC_WRAPPERS_NO_PURE_DECLS \
+	DECLARE_FUNCTION(execSphereOverlap);
+
+
 #define FID_Unreal_Projects_NewRPG_Source_NewRPG_NewRPGCharacter_h_16_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesANewRPGCharacter(); \
@@ -39,6 +43,7 @@ public: \
 #define FID_Unreal_Projects_NewRPG_Source_NewRPG_NewRPGCharacter_h_16_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
+	FID_Unreal_Projects_NewRPG_Source_NewRPG_NewRPGCharacter_h_16_RPC_WRAPPERS_NO_PURE_DECLS \
 	FID_Unreal_Projects_NewRPG_Source_NewRPG_NewRPGCharacter_h_16_INCLASS_NO_PURE_DECLS \
 	FID_Unreal_Projects_NewRPG_Source_NewRPG_NewRPGCharacter_h_16_ENHANCED_CONSTRUCTORS \
 private: \

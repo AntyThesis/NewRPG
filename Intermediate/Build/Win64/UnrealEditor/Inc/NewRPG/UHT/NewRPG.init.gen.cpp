@@ -33,13 +33,13 @@ void EmptyLinkFunctionForGeneratedCodeNewRPG_init() {}
 				SingletonFuncArray,
 				UE_ARRAY_COUNT(SingletonFuncArray),
 				PKG_CompiledIn | 0x00000000,
-				0x76C313D8,
-				0xA1A9F9FE,
+				0xE8A273A5,
+				0x7B81C60C,
 				METADATA_PARAMS(0, nullptr)
 			};
 			UECodeGen_Private::ConstructUPackage(Z_Registration_Info_UPackage__Script_NewRPG.OuterSingleton, PackageParams);
 		}
 		return Z_Registration_Info_UPackage__Script_NewRPG.OuterSingleton;
 	}
-	static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_NewRPG(Z_Construct_UPackage__Script_NewRPG, TEXT("/Script/NewRPG"), Z_Registration_Info_UPackage__Script_NewRPG, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0x76C313D8, 0xA1A9F9FE));
+	static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_NewRPG(Z_Construct_UPackage__Script_NewRPG, TEXT("/Script/NewRPG"), Z_Registration_Info_UPackage__Script_NewRPG, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0xE8A273A5, 0x7B81C60C));
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

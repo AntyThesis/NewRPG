@@ -6,6 +6,7 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
 #include "FItemStruct.h"
+#include "Interactable.h"
 #include "ItemBase.generated.h"
 
 class UBoxComponent;
@@ -13,7 +14,7 @@ class ANewRPGCharacter;
 
 
 UCLASS()
-class NEWRPG_API AItemBase : public AActor
+class NEWRPG_API AItemBase : public AActor, public IInteractable
 {
 	GENERATED_BODY()
 	
@@ -28,7 +29,7 @@ public:
 	UBoxComponent* CollisionBox;
 
 	
-	ANewRPGCharacter* InteractingPlayer;
+	//ANewRPGCharacter* InteractingPlayer;
 
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "ItemStats")
@@ -54,8 +55,12 @@ public:
 
 
 	UFUNCTION()
-	void OnOverlapBegin(UPrimitiveComponent* OverlappedComp, AActor* OtherActor,
+	/*void OnOverlapBegin(UPrimitiveComponent* OverlappedComp, AActor* OtherActor,
 		UPrimitiveComponent* OtherComp, int32 OtherBodyIndex,
-		bool bFromSweep, const FHitResult& SweepResult);
+		bool bFromSweep, const FHitResult& SweepResult);*/
+
+
+	
+	void Interact(ANewRPGCharacter* InteractingCharacter) override;
 
 };
