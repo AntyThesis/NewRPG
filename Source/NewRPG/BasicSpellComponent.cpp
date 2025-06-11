@@ -55,7 +55,7 @@ void UBasicSpellComponent::CastSpell(ACharacter* CastTarget) {
 		ACharacter* OwningCharacter = Cast<ACharacter>(GetOwner());
 		UManaComponent* ManaComponent = OwningCharacter->GetComponentByClass<UManaComponent>();
 
-		if (ManaComponent->CurrentMana > ManaCost*-1){
+		if (ManaComponent->CurrentMana >= ManaCost * -1){
 
 			if (CastTarget) {
 				UHealthComponent* TargetHealthComponent = CastTarget->FindComponentByClass<UHealthComponent>();
