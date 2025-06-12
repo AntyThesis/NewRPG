@@ -12,7 +12,7 @@ AEnemyBase::AEnemyBase()
 	PrimaryActorTick.bCanEverTick = true;
 
 	// Create a Health Component and initialize the MaxHealth variable
-	HealthComponent = CreateDefaultSubobject<UHealthComponent>(TEXT("Health Component"));
+	HealthComponent = CreateDefaultSubobject<UHealthComponent>(TEXT("Enemy Health Component"));
 	HealthComponent->MaxHealth = 50.f;
 
 

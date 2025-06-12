@@ -26,6 +26,8 @@ void ANewRPGPlayerController::BeginPlay()
 {
 	// Call the base class  
 	Super::BeginPlay();
+
+	ANewRPGCharacter* OwningCharacter = Cast<ANewRPGCharacter>(GetPawn());
 }
 
 void ANewRPGPlayerController::SetupInputComponent()
@@ -53,6 +55,7 @@ void ANewRPGPlayerController::SetupInputComponent()
 		EnhancedInputComponent->BindAction(SetDestinationTouchAction, ETriggerEvent::Triggered, this, &ANewRPGPlayerController::OnTouchTriggered);
 		EnhancedInputComponent->BindAction(SetDestinationTouchAction, ETriggerEvent::Completed, this, &ANewRPGPlayerController::OnTouchReleased);
 		EnhancedInputComponent->BindAction(SetDestinationTouchAction, ETriggerEvent::Canceled, this, &ANewRPGPlayerController::OnTouchReleased);
+		EnhancedInputComponent->BindAction(Interact, ETriggerEvent::Triggered, this, &ANewRPGPlayerController::PerformOverlap );
 	}
 	else
 	{
@@ -122,4 +125,13 @@ void ANewRPGPlayerController::OnTouchReleased()
 {
 	bIsTouch = false;
 	OnSetDestinationReleased();
+}
+
+
+void ANewRPGPlayerController::PerformOverlap() {
+	ANewRPGCharacter* OwningCharacter = Cast<ANewRPGCharacter>(GetPawn());
+
+		if (OwningCharacter) {
+			OwningCharacter->SphereOverlap();
+		}
 }

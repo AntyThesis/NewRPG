@@ -14,6 +14,7 @@
 #include "InventoryComponent.h"
 #include "ManaComponent.h"
 #include "ItemBase.h"
+#include "AlignmentComponent.h"
 #include "Kismet/KismetSystemLibrary.h"
 
 ANewRPGCharacter::ANewRPGCharacter()
@@ -50,14 +51,14 @@ ANewRPGCharacter::ANewRPGCharacter()
 	PrimaryActorTick.bStartWithTickEnabled = true;
 
 
-	HealthComponent = CreateDefaultSubobject<UHealthComponent>(TEXT("HealthComponent"));
+	HealthComponent = CreateDefaultSubobject<UHealthComponent>(TEXT("Player HealthComponent"));
 
-	InventoryComponent = CreateDefaultSubobject<UInventoryComponent>(TEXT("InventoryComponent"));
+	InventoryComponent = CreateDefaultSubobject<UInventoryComponent>(TEXT("Player InventoryComponent"));
 
-	ManaComponent = CreateDefaultSubobject<UManaComponent>(TEXT("Bitchin Mana Component"));
+	ManaComponent = CreateDefaultSubobject<UManaComponent>(TEXT("Player Mana Component"));
 
-
-
+	AlignmentComponent = CreateDefaultSubobject<UAlignmentComponent>(TEXT("Player Alignment Component"));
+	
 }
 
 void ANewRPGCharacter::Tick(float DeltaSeconds)

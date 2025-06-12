@@ -36,6 +36,18 @@
     <Filter Include="Source\NewRPG">
       <UniqueIdentifier>{F9C25DE4-61DB-3A80-8A97-39E99355C1DD}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="..\..\Source\NewRPG\AlignmentComponent.cpp">
+      <Filter>Source\NewRPG</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\NewRPG\AlignmentComponent.h">
+      <Filter>Source\NewRPG</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\NewRPG\AlignmentManager.cpp">
+      <Filter>Source\NewRPG</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\NewRPG\AlignmentManager.h">
+      <Filter>Source\NewRPG</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\NewRPG\BasicSpellComponent.cpp">
       <Filter>Source\NewRPG</Filter>
     </ClCompile>
@@ -52,6 +64,12 @@
       <Filter>Source\NewRPG</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\NewRPG\EXPComponent.h">
+      <Filter>Source\NewRPG</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\NewRPG\FAlignment.cpp">
+      <Filter>Source\NewRPG</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\NewRPG\FAlignment.h">
       <Filter>Source\NewRPG</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\NewRPG\FItemStruct.cpp">

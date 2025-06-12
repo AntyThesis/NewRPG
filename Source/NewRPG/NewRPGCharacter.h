@@ -9,6 +9,8 @@
 class UHealthComponent;
 class UInventoryComponent;
 class UManaComponent;
+class UAlignmentComponent;
+
 
 UCLASS(Blueprintable)
 class ANewRPGCharacter : public ACharacter
@@ -28,6 +30,11 @@ public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 	UInventoryComponent* InventoryComponent;
 
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	UAlignmentComponent* AlignmentComponent;
+
+	
+
 	// Called every frame.
 	virtual void Tick(float DeltaSeconds) override;
 
@@ -35,6 +42,10 @@ public:
 	FORCEINLINE class UCameraComponent* GetTopDownCameraComponent() const { return TopDownCameraComponent; }
 	/** Returns CameraBoom subobject **/
 	FORCEINLINE class USpringArmComponent* GetCameraBoom() const { return CameraBoom; }
+
+
+	UFUNCTION(BlueprintCallable)
+	void SphereOverlap();
 
 private:
 	/** Top down camera */
@@ -46,7 +57,6 @@ private:
 	class USpringArmComponent* CameraBoom;
 
 
-	UFUNCTION(BlueprintCallable)
-	void SphereOverlap();
+
 };
 

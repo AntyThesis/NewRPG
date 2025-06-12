@@ -14,6 +14,10 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define NEWRPG_NewRPGPlayerController_generated_h
 
+#define FID_Unreal_Projects_NewRPG_Source_NewRPG_NewRPGPlayerController_h_20_RPC_WRAPPERS_NO_PURE_DECLS \
+	DECLARE_FUNCTION(execPerformOverlap);
+
+
 #define FID_Unreal_Projects_NewRPG_Source_NewRPG_NewRPGPlayerController_h_20_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesANewRPGPlayerController(); \
@@ -39,6 +43,7 @@ public: \
 #define FID_Unreal_Projects_NewRPG_Source_NewRPG_NewRPGPlayerController_h_20_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
+	FID_Unreal_Projects_NewRPG_Source_NewRPG_NewRPGPlayerController_h_20_RPC_WRAPPERS_NO_PURE_DECLS \
 	FID_Unreal_Projects_NewRPG_Source_NewRPG_NewRPGPlayerController_h_20_INCLASS_NO_PURE_DECLS \
 	FID_Unreal_Projects_NewRPG_Source_NewRPG_NewRPGPlayerController_h_20_ENHANCED_CONSTRUCTORS \
 private: \
