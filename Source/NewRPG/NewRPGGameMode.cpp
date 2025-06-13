@@ -2,8 +2,11 @@
 
 #include "NewRPGGameMode.h"
 #include "NewRPGPlayerController.h"
+#include "Kismet/GameplayStatics.h"
 #include "NewRPGCharacter.h"
 #include "UObject/ConstructorHelpers.h"
+#include "AlignmentComponent.h"
+
 
 ANewRPGGameMode::ANewRPGGameMode()
 {
@@ -23,4 +26,31 @@ ANewRPGGameMode::ANewRPGGameMode()
 	{
 		PlayerControllerClass = PlayerControllerBPClass.Class;
 	}
+}
+
+
+void ANewRPGGameMode::BeginPlay() {
+	Super::BeginPlay();
+	TArray<AActor*> FoundActors;
+	UGameplayStatics::GetAllActorsOfClass(GetWorld(),ANewRPGCharacter::StaticClass(),FoundActors);
+
+	int32 CurrentIndex = 0;
+
+	for (AActor* CurrentActor: FoundActors) {
+		ANewRPGCharacter* Character = Cast<ANewRPGCharacter>(CurrentActor);
+		if (Character) {
+			
+			Players.Add(Character);
+
+			Character->AlignmentComponent->PlayerID = CurrentIndex;
+
+			CurrentIndex++;
+		}
+
+		if (GEngine) {
+			GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Blue, FString::Printf(TEXT("Player ID is: %i"),Character->AlignmentComponent->PlayerID));
+		}
+		
+	}
+	
 }

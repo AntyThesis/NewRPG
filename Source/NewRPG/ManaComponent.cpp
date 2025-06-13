@@ -12,8 +12,6 @@ UManaComponent::UManaComponent()
 
 	// ...
 
-	MaxMana = 100.f;
-	CurrentMana = MaxMana;
 }
 
 

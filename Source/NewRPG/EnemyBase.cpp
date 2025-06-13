@@ -23,7 +23,16 @@ void AEnemyBase::BeginPlay()
 {
 	Super::BeginPlay();
 	
-	HealthComponent->CurrentHealth = HealthComponent->MaxHealth;
+	if (HealthComponent) {
+
+		HealthComponent->CurrentHealth = HealthComponent->MaxHealth;
+	}
+	else {
+		if (GEngine) {
+			GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Cyan, TEXT("No health component found"));
+		}
+	}
+	
 
 }
 

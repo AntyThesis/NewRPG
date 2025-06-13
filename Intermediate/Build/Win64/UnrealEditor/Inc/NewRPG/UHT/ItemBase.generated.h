@@ -9,14 +9,12 @@
 #include "UObject/ScriptMacros.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
-class ANewRPGCharacter;
 #ifdef NEWRPG_ItemBase_generated_h
 #error "ItemBase.generated.h already included, missing '#pragma once' in ItemBase.h"
 #endif
 #define NEWRPG_ItemBase_generated_h
 
 #define FID_Unreal_Projects_NewRPG_Source_NewRPG_ItemBase_h_19_RPC_WRAPPERS_NO_PURE_DECLS \
-	DECLARE_FUNCTION(execInteract); \
 	DECLARE_FUNCTION(execPickedUp);
 
 

@@ -228,8 +228,13 @@ struct Z_Construct_UClass_UAlignmentComponent_Statics
 		{ "ToolTip", "Declare the structure containing the FAlignment variables" },
 #endif
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_PlayerID_MetaData[] = {
+		{ "Category", "AlignmentComponent" },
+		{ "ModuleRelativePath", "AlignmentComponent.h" },
+	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FStructPropertyParams NewProp_AlignmentStats;
+	static const UECodeGen_Private::FIntPropertyParams NewProp_PlayerID;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
@@ -245,8 +250,10 @@ struct Z_Construct_UClass_UAlignmentComponent_Statics
 	static const UECodeGen_Private::FClassParams ClassParams;
 };
 const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_UAlignmentComponent_Statics::NewProp_AlignmentStats = { "AlignmentStats", nullptr, (EPropertyFlags)0x0010000000020015, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UAlignmentComponent, AlignmentStats), Z_Construct_UScriptStruct_FAlignment, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_AlignmentStats_MetaData), NewProp_AlignmentStats_MetaData) }; // 534200981
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_UAlignmentComponent_Statics::NewProp_PlayerID = { "PlayerID", nullptr, (EPropertyFlags)0x0010000000020015, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UAlignmentComponent, PlayerID), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_PlayerID_MetaData), NewProp_PlayerID_MetaData) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UAlignmentComponent_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UAlignmentComponent_Statics::NewProp_AlignmentStats,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UAlignmentComponent_Statics::NewProp_PlayerID,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_UAlignmentComponent_Statics::PropPointers) < 2048);
 UObject* (*const Z_Construct_UClass_UAlignmentComponent_Statics::DependentSingletons[])() = {
@@ -289,10 +296,10 @@ UAlignmentComponent::~UAlignmentComponent() {}
 struct Z_CompiledInDeferFile_FID_Unreal_Projects_NewRPG_Source_NewRPG_AlignmentComponent_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UAlignmentComponent, UAlignmentComponent::StaticClass, TEXT("UAlignmentComponent"), &Z_Registration_Info_UClass_UAlignmentComponent, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UAlignmentComponent), 484858569U) },
+		{ Z_Construct_UClass_UAlignmentComponent, UAlignmentComponent::StaticClass, TEXT("UAlignmentComponent"), &Z_Registration_Info_UClass_UAlignmentComponent, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UAlignmentComponent), 409519986U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Unreal_Projects_NewRPG_Source_NewRPG_AlignmentComponent_h_1181468661(TEXT("/Script/NewRPG"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Unreal_Projects_NewRPG_Source_NewRPG_AlignmentComponent_h_333115603(TEXT("/Script/NewRPG"),
 	Z_CompiledInDeferFile_FID_Unreal_Projects_NewRPG_Source_NewRPG_AlignmentComponent_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Unreal_Projects_NewRPG_Source_NewRPG_AlignmentComponent_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

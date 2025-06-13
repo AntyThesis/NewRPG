@@ -10,6 +10,7 @@ class UHealthComponent;
 class UInventoryComponent;
 class UManaComponent;
 class UAlignmentComponent;
+class UEXPComponent;
 
 
 UCLASS(Blueprintable)
@@ -20,18 +21,24 @@ class ANewRPGCharacter : public ACharacter
 public:
 	ANewRPGCharacter();
 
-	UPROPERTY(VisibleAnywhere,BlueprintReadOnly)
+	// Declare custom components for the player character
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Custom Components")
 	UHealthComponent* HealthComponent;
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
-	UManaComponent* ManaComponent;
-
-
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Custom Components")
 	UInventoryComponent* InventoryComponent;
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Custom Components")
+	UManaComponent* ManaComponent;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Custom Components")
 	UAlignmentComponent* AlignmentComponent;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Custom Components")
+	UEXPComponent* EXPComponent;
+
+
+
 
 	
 
@@ -46,6 +53,8 @@ public:
 
 	UFUNCTION(BlueprintCallable)
 	void SphereOverlap();
+
+	virtual void BeginPlay() override;
 
 private:
 	/** Top down camera */

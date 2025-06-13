@@ -42,4 +42,6 @@ public:
 	UFUNCTION(BlueprintCallable)
 	void AffectGreen(float GreenChangeAmount);
 		
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	int PlayerID;
 };

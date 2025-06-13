@@ -15,6 +15,7 @@
 #include "ManaComponent.h"
 #include "ItemBase.h"
 #include "AlignmentComponent.h"
+#include "EXPComponent.h"
 #include "Kismet/KismetSystemLibrary.h"
 
 ANewRPGCharacter::ANewRPGCharacter()
@@ -50,14 +51,15 @@ ANewRPGCharacter::ANewRPGCharacter()
 	PrimaryActorTick.bCanEverTick = true;
 	PrimaryActorTick.bStartWithTickEnabled = true;
 
-
-	HealthComponent = CreateDefaultSubobject<UHealthComponent>(TEXT("Player HealthComponent"));
-
-	InventoryComponent = CreateDefaultSubobject<UInventoryComponent>(TEXT("Player InventoryComponent"));
-
+	// Create custom components and initialize component variables
+	HealthComponent = CreateDefaultSubobject<UHealthComponent>(TEXT("Player Health Component"));
+	InventoryComponent = CreateDefaultSubobject<UInventoryComponent>(TEXT("Player Inventory Component"));
 	ManaComponent = CreateDefaultSubobject<UManaComponent>(TEXT("Player Mana Component"));
-
 	AlignmentComponent = CreateDefaultSubobject<UAlignmentComponent>(TEXT("Player Alignment Component"));
+	EXPComponent = CreateDefaultSubobject<UEXPComponent>(TEXT("Player EXP Component"));
+
+	HealthComponent->MaxHealth = 100.f;
+	ManaComponent->MaxMana = 100.f;
 	
 }
 
@@ -104,4 +106,28 @@ void ANewRPGCharacter::SphereOverlap() {
 		}
 	}
 	DrawDebugSphere(GetWorld(), SphereCenter, Radius, 12, FColor::Green, false, 2.f);
+}
+
+
+void ANewRPGCharacter::BeginPlay() {
+	Super::BeginPlay();
+
+	if (HealthComponent) {
+
+		HealthComponent->CurrentHealth = HealthComponent->MaxHealth;
+	 
+	}
+
+	else {
+		if (GEngine) {
+			GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Green, TEXT("No health component found"));
+		}
+	}
+
+	if (ManaComponent) {
+		ManaComponent->CurrentMana = ManaComponent->MaxMana;
+	}
+	else {
+		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Blue, TEXT("No Mana component found"));
+	}
 }

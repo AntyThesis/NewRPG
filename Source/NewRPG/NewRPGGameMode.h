@@ -6,6 +6,8 @@
 #include "GameFramework/GameModeBase.h"
 #include "NewRPGGameMode.generated.h"
 
+class ANewRPGCharacter;
+
 UCLASS(minimalapi)
 class ANewRPGGameMode : public AGameModeBase
 {
@@ -13,6 +15,10 @@ class ANewRPGGameMode : public AGameModeBase
 
 public:
 	ANewRPGGameMode();
+
+	TArray<ANewRPGCharacter*> Players;
+
+	void BeginPlay() override;
 };
 
 

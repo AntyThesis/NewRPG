@@ -34,7 +34,7 @@ AItemBase::AItemBase()
 	CollisionBox->SetupAttachment(StaticMeshComponent);
 
 	
-	//CollisionBox->OnComponentBeginOverlap.AddDynamic(this, &AItemBase::OnOverlapBegin);
+
 
 	
 
@@ -59,25 +59,6 @@ void AItemBase::Tick(float DeltaTime)
 
 }
 
-/*void AItemBase::OnOverlapBegin(UPrimitiveComponent* OverlappedComp, AActor* OtherActor,
-	UPrimitiveComponent* OtherComp, int32 OtherBodyIndex,
-	bool bFromSweep, const FHitResult& SweepResult) {
-	if (OtherActor) {
-
-		InteractingPlayer = Cast<ANewRPGCharacter>(OtherActor);
-		InteractingPlayer->InventoryComponent->AddItemToInventory(this);
-		PickedUp();
-	
-		
-		if (GEngine) {
-			GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Blue, FString::Printf(TEXT("Actor Name:%s"), *GetName()));
-		}
-		
-	}
-	
-}*/
-
-
 
 void AItemBase::PickedUp() {
 
@@ -90,7 +71,7 @@ void AItemBase::PickedUp() {
 
 
 // Implement the Interact() function from the Interactable Interface
-void AItemBase::Interact(ANewRPGCharacter* InteractingCharacter) {
+void AItemBase::Interact(ANewRPGCharacter* InteractingCharacter){
 	if (InteractingCharacter->InventoryComponent->Items.Num() < 3) {
 
 		InteractingCharacter->InventoryComponent->AddItemToInventory(this);

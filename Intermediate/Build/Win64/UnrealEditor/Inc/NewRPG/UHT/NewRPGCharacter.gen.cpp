@@ -16,6 +16,7 @@ ENGINE_API UClass* Z_Construct_UClass_USpringArmComponent_NoRegister();
 NEWRPG_API UClass* Z_Construct_UClass_ANewRPGCharacter();
 NEWRPG_API UClass* Z_Construct_UClass_ANewRPGCharacter_NoRegister();
 NEWRPG_API UClass* Z_Construct_UClass_UAlignmentComponent_NoRegister();
+NEWRPG_API UClass* Z_Construct_UClass_UEXPComponent_NoRegister();
 NEWRPG_API UClass* Z_Construct_UClass_UHealthComponent_NoRegister();
 NEWRPG_API UClass* Z_Construct_UClass_UInventoryComponent_NoRegister();
 NEWRPG_API UClass* Z_Construct_UClass_UManaComponent_NoRegister();
@@ -76,22 +77,33 @@ struct Z_Construct_UClass_ANewRPGCharacter_Statics
 		{ "ModuleRelativePath", "NewRPGCharacter.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_HealthComponent_MetaData[] = {
-		{ "Category", "NewRPGCharacter" },
+		{ "Category", "Custom Components" },
+#if !UE_BUILD_SHIPPING
+		{ "Comment", "// Declare custom components for the player character\n" },
+#endif
+		{ "EditInline", "true" },
+		{ "ModuleRelativePath", "NewRPGCharacter.h" },
+#if !UE_BUILD_SHIPPING
+		{ "ToolTip", "Declare custom components for the player character" },
+#endif
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_InventoryComponent_MetaData[] = {
+		{ "Category", "Custom Components" },
 		{ "EditInline", "true" },
 		{ "ModuleRelativePath", "NewRPGCharacter.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_ManaComponent_MetaData[] = {
-		{ "Category", "NewRPGCharacter" },
-		{ "EditInline", "true" },
-		{ "ModuleRelativePath", "NewRPGCharacter.h" },
-	};
-	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_InventoryComponent_MetaData[] = {
-		{ "Category", "NewRPGCharacter" },
+		{ "Category", "Custom Components" },
 		{ "EditInline", "true" },
 		{ "ModuleRelativePath", "NewRPGCharacter.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_AlignmentComponent_MetaData[] = {
-		{ "Category", "NewRPGCharacter" },
+		{ "Category", "Custom Components" },
+		{ "EditInline", "true" },
+		{ "ModuleRelativePath", "NewRPGCharacter.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_EXPComponent_MetaData[] = {
+		{ "Category", "Custom Components" },
 		{ "EditInline", "true" },
 		{ "ModuleRelativePath", "NewRPGCharacter.h" },
 	};
@@ -121,9 +133,10 @@ struct Z_Construct_UClass_ANewRPGCharacter_Statics
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_HealthComponent;
-	static const UECodeGen_Private::FObjectPropertyParams NewProp_ManaComponent;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_InventoryComponent;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_ManaComponent;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_AlignmentComponent;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_EXPComponent;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_TopDownCameraComponent;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_CameraBoom;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
@@ -138,16 +151,18 @@ struct Z_Construct_UClass_ANewRPGCharacter_Statics
 	static const UECodeGen_Private::FClassParams ClassParams;
 };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ANewRPGCharacter_Statics::NewProp_HealthComponent = { "HealthComponent", nullptr, (EPropertyFlags)0x00100000000a001d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ANewRPGCharacter, HealthComponent), Z_Construct_UClass_UHealthComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_HealthComponent_MetaData), NewProp_HealthComponent_MetaData) };
-const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ANewRPGCharacter_Statics::NewProp_ManaComponent = { "ManaComponent", nullptr, (EPropertyFlags)0x00100000000a001d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ANewRPGCharacter, ManaComponent), Z_Construct_UClass_UManaComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ManaComponent_MetaData), NewProp_ManaComponent_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ANewRPGCharacter_Statics::NewProp_InventoryComponent = { "InventoryComponent", nullptr, (EPropertyFlags)0x00100000000a001d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ANewRPGCharacter, InventoryComponent), Z_Construct_UClass_UInventoryComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_InventoryComponent_MetaData), NewProp_InventoryComponent_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ANewRPGCharacter_Statics::NewProp_ManaComponent = { "ManaComponent", nullptr, (EPropertyFlags)0x00100000000a001d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ANewRPGCharacter, ManaComponent), Z_Construct_UClass_UManaComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ManaComponent_MetaData), NewProp_ManaComponent_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ANewRPGCharacter_Statics::NewProp_AlignmentComponent = { "AlignmentComponent", nullptr, (EPropertyFlags)0x00100000000a001d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ANewRPGCharacter, AlignmentComponent), Z_Construct_UClass_UAlignmentComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_AlignmentComponent_MetaData), NewProp_AlignmentComponent_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ANewRPGCharacter_Statics::NewProp_EXPComponent = { "EXPComponent", nullptr, (EPropertyFlags)0x00100000000a001d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ANewRPGCharacter, EXPComponent), Z_Construct_UClass_UEXPComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_EXPComponent_MetaData), NewProp_EXPComponent_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ANewRPGCharacter_Statics::NewProp_TopDownCameraComponent = { "TopDownCameraComponent", nullptr, (EPropertyFlags)0x00400000000a001d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ANewRPGCharacter, TopDownCameraComponent), Z_Construct_UClass_UCameraComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_TopDownCameraComponent_MetaData), NewProp_TopDownCameraComponent_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ANewRPGCharacter_Statics::NewProp_CameraBoom = { "CameraBoom", nullptr, (EPropertyFlags)0x00400000000a001d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ANewRPGCharacter, CameraBoom), Z_Construct_UClass_USpringArmComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_CameraBoom_MetaData), NewProp_CameraBoom_MetaData) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ANewRPGCharacter_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ANewRPGCharacter_Statics::NewProp_HealthComponent,
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ANewRPGCharacter_Statics::NewProp_ManaComponent,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ANewRPGCharacter_Statics::NewProp_InventoryComponent,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ANewRPGCharacter_Statics::NewProp_ManaComponent,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ANewRPGCharacter_Statics::NewProp_AlignmentComponent,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ANewRPGCharacter_Statics::NewProp_EXPComponent,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ANewRPGCharacter_Statics::NewProp_TopDownCameraComponent,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ANewRPGCharacter_Statics::NewProp_CameraBoom,
 };
@@ -192,10 +207,10 @@ ANewRPGCharacter::~ANewRPGCharacter() {}
 struct Z_CompiledInDeferFile_FID_Unreal_Projects_NewRPG_Source_NewRPG_NewRPGCharacter_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_ANewRPGCharacter, ANewRPGCharacter::StaticClass, TEXT("ANewRPGCharacter"), &Z_Registration_Info_UClass_ANewRPGCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ANewRPGCharacter), 2857423583U) },
+		{ Z_Construct_UClass_ANewRPGCharacter, ANewRPGCharacter::StaticClass, TEXT("ANewRPGCharacter"), &Z_Registration_Info_UClass_ANewRPGCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ANewRPGCharacter), 1756456655U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Unreal_Projects_NewRPG_Source_NewRPG_NewRPGCharacter_h_3824238062(TEXT("/Script/NewRPG"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Unreal_Projects_NewRPG_Source_NewRPG_NewRPGCharacter_h_1725948346(TEXT("/Script/NewRPG"),
 	Z_CompiledInDeferFile_FID_Unreal_Projects_NewRPG_Source_NewRPG_NewRPGCharacter_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Unreal_Projects_NewRPG_Source_NewRPG_NewRPGCharacter_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
