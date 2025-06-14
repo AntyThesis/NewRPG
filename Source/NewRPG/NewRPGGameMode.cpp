@@ -31,22 +31,32 @@ ANewRPGGameMode::ANewRPGGameMode()
 
 void ANewRPGGameMode::BeginPlay() {
 	Super::BeginPlay();
+
+	// Create an array to hold the actors 
 	TArray<AActor*> FoundActors;
 	UGameplayStatics::GetAllActorsOfClass(GetWorld(),ANewRPGCharacter::StaticClass(),FoundActors);
 
-	int32 CurrentIndex = 0;
+	// Create an index to access elements in the array
+	uint8 CurrentIndex = 0;
 
+	// Ranged for loop iterating over the FoundActors array
 	for (AActor* CurrentActor: FoundActors) {
+
+		// Check to see if the CurrentActor is a player character and then store it
 		ANewRPGCharacter* Character = Cast<ANewRPGCharacter>(CurrentActor);
 		if (Character) {
 			
+			// Add that character to the Players array
 			Players.Add(Character);
 
+			// Set the PlayerID
 			Character->AlignmentComponent->PlayerID = CurrentIndex;
 
+			// Increment the Index
 			CurrentIndex++;
 		}
 
+		
 		if (GEngine) {
 			GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Blue, FString::Printf(TEXT("Player ID is: %i"),Character->AlignmentComponent->PlayerID));
 		}

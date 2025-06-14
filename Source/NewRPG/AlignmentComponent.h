@@ -43,5 +43,5 @@ public:
 	void AffectGreen(float GreenChangeAmount);
 		
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
-	int PlayerID;
+	uint8 PlayerID;
 };
