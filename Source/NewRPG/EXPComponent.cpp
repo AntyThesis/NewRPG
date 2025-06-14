@@ -55,7 +55,6 @@ void UEXPComponent::EarnEXP(float EXPToEarn) {
 
 
 
-
 void UEXPComponent::LevelUp() {
 	CurrentEXP = 0;
 	MaxEXP = MaxEXP * 2;

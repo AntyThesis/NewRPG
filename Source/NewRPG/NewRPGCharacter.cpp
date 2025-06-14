@@ -112,6 +112,7 @@ void ANewRPGCharacter::SphereOverlap() {
 void ANewRPGCharacter::BeginPlay() {
 	Super::BeginPlay();
 
+	// If there is a health component then initialize its variables
 	if (HealthComponent) {
 
 		HealthComponent->CurrentHealth = HealthComponent->MaxHealth;
@@ -124,6 +125,7 @@ void ANewRPGCharacter::BeginPlay() {
 		}
 	}
 
+	// If there is a Mana component then initialize its variables
 	if (ManaComponent) {
 		ManaComponent->CurrentMana = ManaComponent->MaxMana;
 	}
