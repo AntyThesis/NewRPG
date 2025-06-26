@@ -116,6 +116,8 @@ void ANewRPGCharacter::BeginPlay() {
 	if (HealthComponent) {
 
 		HealthComponent->CurrentHealth = HealthComponent->MaxHealth;
+		HealthComponent->OnDeath.AddDynamic(this, &ANewRPGCharacter::Death);
+		
 	 
 	}
 
@@ -132,4 +134,20 @@ void ANewRPGCharacter::BeginPlay() {
 	else {
 		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Blue, TEXT("No Mana component found"));
 	}
+}
+
+
+void ANewRPGCharacter::Death() {
+	GetMesh()->SetSimulatePhysics(true);
+	GetMesh()->SetCollisionEnabled(ECollisionEnabled::QueryAndPhysics);
+
+	GetCapsuleComponent()->SetCollisionEnabled(ECollisionEnabled::NoCollision);
+
+	APlayerController* PlayerController = Cast<APlayerController>(GetController());
+
+	if (PlayerController) {
+
+		PlayerController->DisableInput(PlayerController);
+	}
+
 }

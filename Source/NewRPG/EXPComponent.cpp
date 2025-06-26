@@ -26,7 +26,7 @@ UEXPComponent::UEXPComponent()
 void UEXPComponent::BeginPlay()
 {
 	Super::BeginPlay();
-	EarnEXP(126.f);
+	EarnEXP(0.f);
 	// ...
 	
 }

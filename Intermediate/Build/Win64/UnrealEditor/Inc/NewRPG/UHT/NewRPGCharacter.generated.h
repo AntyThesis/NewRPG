@@ -15,6 +15,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #define NEWRPG_NewRPGCharacter_generated_h
 
 #define FID_Unreal_Projects_NewRPG_Source_NewRPG_NewRPGCharacter_h_19_RPC_WRAPPERS_NO_PURE_DECLS \
+	DECLARE_FUNCTION(execDeath); \
 	DECLARE_FUNCTION(execSphereOverlap);
 
 

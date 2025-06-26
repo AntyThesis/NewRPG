@@ -19,6 +19,7 @@ void UHealthComponent::BeginPlay()
 {
 	Super::BeginPlay();
 
+	OwningCharacter = Cast<ANewRPGCharacter>(GetOwner());
 	// ...
 
 }
@@ -33,7 +34,7 @@ void UHealthComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActo
 }
 
 // Define the AffectHealth() function
-void UHealthComponent::AffectHealth(float HealthChangeAmount){
+void UHealthComponent::AffectHealth(float HealthChangeAmount, ANewRPGCharacter* AttackingCharacter){
 	CurrentHealth += HealthChangeAmount;
 	CurrentHealth = FMath::Clamp(CurrentHealth, 0, MaxHealth);
 	OnHealthChanged.Broadcast();
@@ -43,10 +44,19 @@ void UHealthComponent::AffectHealth(float HealthChangeAmount){
 	}
 
 	if (CurrentHealth <= 0) {
-		RIP();
+		RIP(AttackingCharacter);
 	}
 }
 
-void UHealthComponent::RIP() {
-	OnDeath.Broadcast();
+void UHealthComponent::RIP(ANewRPGCharacter* AttackingCharacter) {
+	if (OwningCharacter && OwningCharacter->IsA(ANewRPGCharacter::StaticClass())) {
+	
+		OnDeath.Broadcast();
+		
+	}
+	else {
+		OnKilledWithCharacter.Broadcast(AttackingCharacter);
+	}
+
+
 }

@@ -52,7 +52,7 @@ public:
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 
 	UFUNCTION(BlueprintCallable)
-	virtual void CastSpell(ACharacter* CastTarget);
+	virtual void CastSpell();
 
 	UFUNCTION(BlueprintCallable)
 	virtual void ToggleCooldown();

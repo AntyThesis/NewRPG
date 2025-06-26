@@ -9,7 +9,6 @@
 #include "UObject/ScriptMacros.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
-class ACharacter;
 #ifdef NEWRPG_BasicSpellComponent_generated_h
 #error "BasicSpellComponent.generated.h already included, missing '#pragma once' in BasicSpellComponent.h"
 #endif

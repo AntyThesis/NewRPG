@@ -7,6 +7,7 @@
 #include "EnemyBase.generated.h"
 
 class UHealthComponent;
+class ANewRPGCharacter;
 
 UCLASS()
 class NEWRPG_API AEnemyBase : public ACharacter
@@ -16,6 +17,9 @@ class NEWRPG_API AEnemyBase : public ACharacter
 public:
 	// Sets default values for this character's properties
 	AEnemyBase();
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	float ExperienceToGive;
 
 
 	UPROPERTY(VisibleAnywhere,BlueprintReadOnly)
@@ -33,5 +37,9 @@ public:
 
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
+
+
+	UFUNCTION(BlueprintCallable)
+	virtual void EnemyKilled(ANewRPGCharacter* AttackingCharacter);
 
 };

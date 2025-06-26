@@ -50,30 +50,8 @@ void UBasicSpellComponent::TickComponent(float DeltaTime, ELevelTick TickType, F
 
 
 // Function that casts the spell
-void UBasicSpellComponent::CastSpell(ACharacter* CastTarget) {
-	if (bOnCooldown == false) {
-		ACharacter* OwningCharacter = Cast<ACharacter>(GetOwner());
-		UManaComponent* ManaComponent = OwningCharacter->GetComponentByClass<UManaComponent>();
+void UBasicSpellComponent::CastSpell() {
 
-		if (ManaComponent->CurrentMana >= ManaCost * -1){
-
-			if (CastTarget) {
-				UHealthComponent* TargetHealthComponent = CastTarget->FindComponentByClass<UHealthComponent>();
-
-				if (TargetHealthComponent) {
-					ManaComponent->AffectMana(ManaCost);
-					TargetHealthComponent->AffectHealth(SpellDamage);
-					ToggleCooldown();
-					GetWorld()->GetTimerManager().SetTimer(TimerHandle, this, &UBasicSpellComponent::ToggleCooldown, CoolDown, false);
-				}
-			}
-		}
-		else {
-			if (GEngine) {
-				GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Emerald, TEXT("Not Enough Mana"));
-			}
-		}
-	}
 }
 
 

@@ -23,6 +23,35 @@ NEWRPG_API UClass* Z_Construct_UClass_UManaComponent_NoRegister();
 UPackage* Z_Construct_UPackage__Script_NewRPG();
 // End Cross Module References
 
+// Begin Class ANewRPGCharacter Function Death
+struct Z_Construct_UFunction_ANewRPGCharacter_Death_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "NewRPGCharacter.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ANewRPGCharacter_Death_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ANewRPGCharacter, nullptr, "Death", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020400, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ANewRPGCharacter_Death_Statics::Function_MetaDataParams), Z_Construct_UFunction_ANewRPGCharacter_Death_Statics::Function_MetaDataParams) };
+UFunction* Z_Construct_UFunction_ANewRPGCharacter_Death()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_ANewRPGCharacter_Death_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(ANewRPGCharacter::execDeath)
+{
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	P_THIS->Death();
+	P_NATIVE_END;
+}
+// End Class ANewRPGCharacter Function Death
+
 // Begin Class ANewRPGCharacter Function SphereOverlap
 struct Z_Construct_UFunction_ANewRPGCharacter_SphereOverlap_Statics
 {
@@ -57,6 +86,7 @@ void ANewRPGCharacter::StaticRegisterNativesANewRPGCharacter()
 {
 	UClass* Class = ANewRPGCharacter::StaticClass();
 	static const FNameNativePtrPair Funcs[] = {
+		{ "Death", &ANewRPGCharacter::execDeath },
 		{ "SphereOverlap", &ANewRPGCharacter::execSphereOverlap },
 	};
 	FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
@@ -142,6 +172,7 @@ struct Z_Construct_UClass_ANewRPGCharacter_Statics
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
+		{ &Z_Construct_UFunction_ANewRPGCharacter_Death, "Death" }, // 489159652
 		{ &Z_Construct_UFunction_ANewRPGCharacter_SphereOverlap, "SphereOverlap" }, // 1031856694
 	};
 	static_assert(UE_ARRAY_COUNT(FuncInfo) < 2048);
@@ -207,10 +238,10 @@ ANewRPGCharacter::~ANewRPGCharacter() {}
 struct Z_CompiledInDeferFile_FID_Unreal_Projects_NewRPG_Source_NewRPG_NewRPGCharacter_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_ANewRPGCharacter, ANewRPGCharacter::StaticClass, TEXT("ANewRPGCharacter"), &Z_Registration_Info_UClass_ANewRPGCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ANewRPGCharacter), 1756456655U) },
+		{ Z_Construct_UClass_ANewRPGCharacter, ANewRPGCharacter::StaticClass, TEXT("ANewRPGCharacter"), &Z_Registration_Info_UClass_ANewRPGCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ANewRPGCharacter), 2079130659U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Unreal_Projects_NewRPG_Source_NewRPG_NewRPGCharacter_h_1725948346(TEXT("/Script/NewRPG"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Unreal_Projects_NewRPG_Source_NewRPG_NewRPGCharacter_h_1222808117(TEXT("/Script/NewRPG"),
 	Z_CompiledInDeferFile_FID_Unreal_Projects_NewRPG_Source_NewRPG_NewRPGCharacter_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Unreal_Projects_NewRPG_Source_NewRPG_NewRPGCharacter_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

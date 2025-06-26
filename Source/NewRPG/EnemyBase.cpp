@@ -3,6 +3,10 @@
 
 #include "EnemyBase.h"
 #include "HealthComponent.h"
+#include "NewRPGCharacter.h"
+#include "Components/CapsuleComponent.h"
+#include "EXPComponent.h"
+
 
 
 // Sets default values
@@ -15,6 +19,8 @@ AEnemyBase::AEnemyBase()
 	HealthComponent = CreateDefaultSubobject<UHealthComponent>(TEXT("Enemy Health Component"));
 	HealthComponent->MaxHealth = 50.f;
 
+	ExperienceToGive = 20.f;
+
 
 }
 
@@ -26,6 +32,7 @@ void AEnemyBase::BeginPlay()
 	if (HealthComponent) {
 
 		HealthComponent->CurrentHealth = HealthComponent->MaxHealth;
+		HealthComponent->OnKilledWithCharacter.AddDynamic(this, &AEnemyBase::EnemyKilled);
 	}
 	else {
 		if (GEngine) {
@@ -50,3 +57,15 @@ void AEnemyBase::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent
 
 }
 
+// {{{Refactor so that every player gets exp when an enemy dies}}}
+void AEnemyBase::EnemyKilled(ANewRPGCharacter* AttackingCharacter) {
+
+
+	if (AttackingCharacter) {
+		AttackingCharacter->EXPComponent->EarnEXP(ExperienceToGive);
+		GetMesh()->SetSimulatePhysics(true);
+		GetMesh()->SetCollisionEnabled(ECollisionEnabled::QueryAndPhysics);
+
+		GetCapsuleComponent()->SetCollisionEnabled(ECollisionEnabled::NoCollision);
+	}
+}

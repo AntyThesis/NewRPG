@@ -72,6 +72,12 @@
     <ClCompile Include="..\..\Source\NewRPG\FAlignment.h">
       <Filter>Source\NewRPG</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\NewRPG\FireBallSpellComponent.cpp">
+      <Filter>Source\NewRPG</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\NewRPG\FireBallSpellComponent.h">
+      <Filter>Source\NewRPG</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\NewRPG\FItemStruct.cpp">
       <Filter>Source\NewRPG</Filter>
     </ClCompile>
@@ -133,6 +139,12 @@
       <Filter>Source\NewRPG</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\NewRPG\NewRPGPlayerController.h">
+      <Filter>Source\NewRPG</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\NewRPG\SpellProjectile.cpp">
+      <Filter>Source\NewRPG</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\NewRPG\SpellProjectile.h">
       <Filter>Source\NewRPG</Filter>
     </ClCompile>
   </ItemGroup>
