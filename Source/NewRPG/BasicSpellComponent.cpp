@@ -50,7 +50,10 @@ void UBasicSpellComponent::TickComponent(float DeltaTime, ELevelTick TickType, F
 
 
 // Function that casts the spell
-void UBasicSpellComponent::CastSpell() {
+void UBasicSpellComponent::CastSpell(UManaComponent* ManaComponent) {
+
+		ManaComponent->AffectMana(ManaCost);
+	
 
 }
 

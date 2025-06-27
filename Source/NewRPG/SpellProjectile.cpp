@@ -13,6 +13,10 @@ ASpellProjectile::ASpellProjectile()
 
 	ProjectileMovementComponent = CreateDefaultSubobject<UProjectileMovementComponent>(TEXT("Projectile Movement Component"));
 
+	ProjectileMovementComponent->InitialSpeed = 300.f;
+	ProjectileMovementComponent->MaxSpeed = 300.f;
+	ProjectileMovementComponent->ProjectileGravityScale = 1.f;
+
 	StaticMeshComponent = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Static Mesh Component"));
 
 }

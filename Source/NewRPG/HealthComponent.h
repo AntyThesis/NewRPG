@@ -9,7 +9,7 @@
 
 DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnHealthChanged);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnDeath);
-DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnKilledWithCharacter, ANewRPGCharacter*, Character);
+
 
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
 class NEWRPG_API UHealthComponent : public UActorComponent
@@ -26,8 +26,6 @@ public:
 	UPROPERTY(BlueprintAssignable)
 	FOnDeath OnDeath;
 
-	UPROPERTY(BlueprintAssignable)
-	FOnKilledWithCharacter OnKilledWithCharacter;
 
 	UPROPERTY(VisibleAnywhere,BlueprintReadOnly,Category = "Health")
 	float CurrentHealth;
@@ -48,10 +46,10 @@ public:
 
 
 	UFUNCTION(BlueprintCallable)
-	void AffectHealth(float HealthChangeAmount, ANewRPGCharacter* AttackingCharacter);
+	void AffectHealth(float HealthChangeAmount);
 
 	UFUNCTION(BlueprintCallable)
-	void RIP(ANewRPGCharacter* AttackingCharacter);
+	void RIP();
 
 		
 };

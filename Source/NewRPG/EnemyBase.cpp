@@ -32,7 +32,7 @@ void AEnemyBase::BeginPlay()
 	if (HealthComponent) {
 
 		HealthComponent->CurrentHealth = HealthComponent->MaxHealth;
-		HealthComponent->OnKilledWithCharacter.AddDynamic(this, &AEnemyBase::EnemyKilled);
+	
 	}
 	else {
 		if (GEngine) {

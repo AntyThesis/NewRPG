@@ -9,6 +9,7 @@
 #include "BasicSpellComponent.generated.h"
 
 class ACharacter;
+class UManaComponent;
 
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
 class NEWRPG_API UBasicSpellComponent : public UActorComponent
@@ -52,7 +53,7 @@ public:
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 
 	UFUNCTION(BlueprintCallable)
-	virtual void CastSpell();
+	virtual void CastSpell(UManaComponent* ManaComponent);
 
 	UFUNCTION(BlueprintCallable)
 	virtual void ToggleCooldown();

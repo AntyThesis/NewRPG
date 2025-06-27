@@ -97,10 +97,10 @@ UFireBallSpellComponent::~UFireBallSpellComponent() {}
 struct Z_CompiledInDeferFile_FID_Unreal_Projects_NewRPG_Source_NewRPG_FireBallSpellComponent_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UFireBallSpellComponent, UFireBallSpellComponent::StaticClass, TEXT("UFireBallSpellComponent"), &Z_Registration_Info_UClass_UFireBallSpellComponent, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UFireBallSpellComponent), 4275821146U) },
+		{ Z_Construct_UClass_UFireBallSpellComponent, UFireBallSpellComponent::StaticClass, TEXT("UFireBallSpellComponent"), &Z_Registration_Info_UClass_UFireBallSpellComponent, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UFireBallSpellComponent), 1039861428U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Unreal_Projects_NewRPG_Source_NewRPG_FireBallSpellComponent_h_3233587700(TEXT("/Script/NewRPG"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Unreal_Projects_NewRPG_Source_NewRPG_FireBallSpellComponent_h_3033408959(TEXT("/Script/NewRPG"),
 	Z_CompiledInDeferFile_FID_Unreal_Projects_NewRPG_Source_NewRPG_FireBallSpellComponent_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Unreal_Projects_NewRPG_Source_NewRPG_FireBallSpellComponent_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

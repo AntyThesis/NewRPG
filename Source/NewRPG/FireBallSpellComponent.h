@@ -26,6 +26,6 @@ public:
 	TSubclassOf<ASpellProjectile> ProjectileClass;
 
 
-	virtual void CastSpell() override;
+	virtual void CastSpell(UManaComponent* ManaComponent) override;
 
 };

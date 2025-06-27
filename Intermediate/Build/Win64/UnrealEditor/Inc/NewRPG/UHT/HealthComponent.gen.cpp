@@ -11,12 +11,10 @@ void EmptyLinkFunctionForGeneratedCodeHealthComponent() {}
 
 // Begin Cross Module References
 ENGINE_API UClass* Z_Construct_UClass_UActorComponent();
-NEWRPG_API UClass* Z_Construct_UClass_ANewRPGCharacter_NoRegister();
 NEWRPG_API UClass* Z_Construct_UClass_UHealthComponent();
 NEWRPG_API UClass* Z_Construct_UClass_UHealthComponent_NoRegister();
 NEWRPG_API UFunction* Z_Construct_UDelegateFunction_NewRPG_OnDeath__DelegateSignature();
 NEWRPG_API UFunction* Z_Construct_UDelegateFunction_NewRPG_OnHealthChanged__DelegateSignature();
-NEWRPG_API UFunction* Z_Construct_UDelegateFunction_NewRPG_OnKilledWithCharacter__DelegateSignature();
 UPackage* Z_Construct_UPackage__Script_NewRPG();
 // End Cross Module References
 
@@ -72,57 +70,12 @@ void FOnDeath_DelegateWrapper(const FMulticastScriptDelegate& OnDeath)
 }
 // End Delegate FOnDeath
 
-// Begin Delegate FOnKilledWithCharacter
-struct Z_Construct_UDelegateFunction_NewRPG_OnKilledWithCharacter__DelegateSignature_Statics
-{
-	struct _Script_NewRPG_eventOnKilledWithCharacter_Parms
-	{
-		ANewRPGCharacter* Character;
-	};
-#if WITH_METADATA
-	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
-		{ "ModuleRelativePath", "HealthComponent.h" },
-	};
-#endif // WITH_METADATA
-	static const UECodeGen_Private::FObjectPropertyParams NewProp_Character;
-	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
-	static const UECodeGen_Private::FFunctionParams FuncParams;
-};
-const UECodeGen_Private::FObjectPropertyParams Z_Construct_UDelegateFunction_NewRPG_OnKilledWithCharacter__DelegateSignature_Statics::NewProp_Character = { "Character", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(_Script_NewRPG_eventOnKilledWithCharacter_Parms, Character), Z_Construct_UClass_ANewRPGCharacter_NoRegister, METADATA_PARAMS(0, nullptr) };
-const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UDelegateFunction_NewRPG_OnKilledWithCharacter__DelegateSignature_Statics::PropPointers[] = {
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UDelegateFunction_NewRPG_OnKilledWithCharacter__DelegateSignature_Statics::NewProp_Character,
-};
-static_assert(UE_ARRAY_COUNT(Z_Construct_UDelegateFunction_NewRPG_OnKilledWithCharacter__DelegateSignature_Statics::PropPointers) < 2048);
-const UECodeGen_Private::FFunctionParams Z_Construct_UDelegateFunction_NewRPG_OnKilledWithCharacter__DelegateSignature_Statics::FuncParams = { (UObject*(*)())Z_Construct_UPackage__Script_NewRPG, nullptr, "OnKilledWithCharacter__DelegateSignature", nullptr, nullptr, Z_Construct_UDelegateFunction_NewRPG_OnKilledWithCharacter__DelegateSignature_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UDelegateFunction_NewRPG_OnKilledWithCharacter__DelegateSignature_Statics::PropPointers), sizeof(Z_Construct_UDelegateFunction_NewRPG_OnKilledWithCharacter__DelegateSignature_Statics::_Script_NewRPG_eventOnKilledWithCharacter_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00130000, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UDelegateFunction_NewRPG_OnKilledWithCharacter__DelegateSignature_Statics::Function_MetaDataParams), Z_Construct_UDelegateFunction_NewRPG_OnKilledWithCharacter__DelegateSignature_Statics::Function_MetaDataParams) };
-static_assert(sizeof(Z_Construct_UDelegateFunction_NewRPG_OnKilledWithCharacter__DelegateSignature_Statics::_Script_NewRPG_eventOnKilledWithCharacter_Parms) < MAX_uint16);
-UFunction* Z_Construct_UDelegateFunction_NewRPG_OnKilledWithCharacter__DelegateSignature()
-{
-	static UFunction* ReturnFunction = nullptr;
-	if (!ReturnFunction)
-	{
-		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UDelegateFunction_NewRPG_OnKilledWithCharacter__DelegateSignature_Statics::FuncParams);
-	}
-	return ReturnFunction;
-}
-void FOnKilledWithCharacter_DelegateWrapper(const FMulticastScriptDelegate& OnKilledWithCharacter, ANewRPGCharacter* Character)
-{
-	struct _Script_NewRPG_eventOnKilledWithCharacter_Parms
-	{
-		ANewRPGCharacter* Character;
-	};
-	_Script_NewRPG_eventOnKilledWithCharacter_Parms Parms;
-	Parms.Character=Character;
-	OnKilledWithCharacter.ProcessMulticastDelegate<UObject>(&Parms);
-}
-// End Delegate FOnKilledWithCharacter
-
 // Begin Class UHealthComponent Function AffectHealth
 struct Z_Construct_UFunction_UHealthComponent_AffectHealth_Statics
 {
 	struct HealthComponent_eventAffectHealth_Parms
 	{
 		float HealthChangeAmount;
-		ANewRPGCharacter* AttackingCharacter;
 	};
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
@@ -130,15 +83,12 @@ struct Z_Construct_UFunction_UHealthComponent_AffectHealth_Statics
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FFloatPropertyParams NewProp_HealthChangeAmount;
-	static const UECodeGen_Private::FObjectPropertyParams NewProp_AttackingCharacter;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static const UECodeGen_Private::FFunctionParams FuncParams;
 };
 const UECodeGen_Private::FFloatPropertyParams Z_Construct_UFunction_UHealthComponent_AffectHealth_Statics::NewProp_HealthChangeAmount = { "HealthChangeAmount", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(HealthComponent_eventAffectHealth_Parms, HealthChangeAmount), METADATA_PARAMS(0, nullptr) };
-const UECodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_UHealthComponent_AffectHealth_Statics::NewProp_AttackingCharacter = { "AttackingCharacter", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(HealthComponent_eventAffectHealth_Parms, AttackingCharacter), Z_Construct_UClass_ANewRPGCharacter_NoRegister, METADATA_PARAMS(0, nullptr) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UHealthComponent_AffectHealth_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UHealthComponent_AffectHealth_Statics::NewProp_HealthChangeAmount,
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UHealthComponent_AffectHealth_Statics::NewProp_AttackingCharacter,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UHealthComponent_AffectHealth_Statics::PropPointers) < 2048);
 const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UHealthComponent_AffectHealth_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UHealthComponent, nullptr, "AffectHealth", nullptr, nullptr, Z_Construct_UFunction_UHealthComponent_AffectHealth_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UHealthComponent_AffectHealth_Statics::PropPointers), sizeof(Z_Construct_UFunction_UHealthComponent_AffectHealth_Statics::HealthComponent_eventAffectHealth_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UHealthComponent_AffectHealth_Statics::Function_MetaDataParams), Z_Construct_UFunction_UHealthComponent_AffectHealth_Statics::Function_MetaDataParams) };
@@ -155,10 +105,9 @@ UFunction* Z_Construct_UFunction_UHealthComponent_AffectHealth()
 DEFINE_FUNCTION(UHealthComponent::execAffectHealth)
 {
 	P_GET_PROPERTY(FFloatProperty,Z_Param_HealthChangeAmount);
-	P_GET_OBJECT(ANewRPGCharacter,Z_Param_AttackingCharacter);
 	P_FINISH;
 	P_NATIVE_BEGIN;
-	P_THIS->AffectHealth(Z_Param_HealthChangeAmount,Z_Param_AttackingCharacter);
+	P_THIS->AffectHealth(Z_Param_HealthChangeAmount);
 	P_NATIVE_END;
 }
 // End Class UHealthComponent Function AffectHealth
@@ -166,26 +115,14 @@ DEFINE_FUNCTION(UHealthComponent::execAffectHealth)
 // Begin Class UHealthComponent Function RIP
 struct Z_Construct_UFunction_UHealthComponent_RIP_Statics
 {
-	struct HealthComponent_eventRIP_Parms
-	{
-		ANewRPGCharacter* AttackingCharacter;
-	};
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
 		{ "ModuleRelativePath", "HealthComponent.h" },
 	};
 #endif // WITH_METADATA
-	static const UECodeGen_Private::FObjectPropertyParams NewProp_AttackingCharacter;
-	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static const UECodeGen_Private::FFunctionParams FuncParams;
 };
-const UECodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_UHealthComponent_RIP_Statics::NewProp_AttackingCharacter = { "AttackingCharacter", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(HealthComponent_eventRIP_Parms, AttackingCharacter), Z_Construct_UClass_ANewRPGCharacter_NoRegister, METADATA_PARAMS(0, nullptr) };
-const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UHealthComponent_RIP_Statics::PropPointers[] = {
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UHealthComponent_RIP_Statics::NewProp_AttackingCharacter,
-};
-static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UHealthComponent_RIP_Statics::PropPointers) < 2048);
-const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UHealthComponent_RIP_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UHealthComponent, nullptr, "RIP", nullptr, nullptr, Z_Construct_UFunction_UHealthComponent_RIP_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UHealthComponent_RIP_Statics::PropPointers), sizeof(Z_Construct_UFunction_UHealthComponent_RIP_Statics::HealthComponent_eventRIP_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UHealthComponent_RIP_Statics::Function_MetaDataParams), Z_Construct_UFunction_UHealthComponent_RIP_Statics::Function_MetaDataParams) };
-static_assert(sizeof(Z_Construct_UFunction_UHealthComponent_RIP_Statics::HealthComponent_eventRIP_Parms) < MAX_uint16);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UHealthComponent_RIP_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UHealthComponent, nullptr, "RIP", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UHealthComponent_RIP_Statics::Function_MetaDataParams), Z_Construct_UFunction_UHealthComponent_RIP_Statics::Function_MetaDataParams) };
 UFunction* Z_Construct_UFunction_UHealthComponent_RIP()
 {
 	static UFunction* ReturnFunction = nullptr;
@@ -197,10 +134,9 @@ UFunction* Z_Construct_UFunction_UHealthComponent_RIP()
 }
 DEFINE_FUNCTION(UHealthComponent::execRIP)
 {
-	P_GET_OBJECT(ANewRPGCharacter,Z_Param_AttackingCharacter);
 	P_FINISH;
 	P_NATIVE_BEGIN;
-	P_THIS->RIP(Z_Param_AttackingCharacter);
+	P_THIS->RIP();
 	P_NATIVE_END;
 }
 // End Class UHealthComponent Function RIP
@@ -235,9 +171,6 @@ struct Z_Construct_UClass_UHealthComponent_Statics
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_OnDeath_MetaData[] = {
 		{ "ModuleRelativePath", "HealthComponent.h" },
 	};
-	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_OnKilledWithCharacter_MetaData[] = {
-		{ "ModuleRelativePath", "HealthComponent.h" },
-	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_CurrentHealth_MetaData[] = {
 		{ "Category", "Health" },
 		{ "ModuleRelativePath", "HealthComponent.h" },
@@ -249,14 +182,13 @@ struct Z_Construct_UClass_UHealthComponent_Statics
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FMulticastDelegatePropertyParams NewProp_OnHealthChanged;
 	static const UECodeGen_Private::FMulticastDelegatePropertyParams NewProp_OnDeath;
-	static const UECodeGen_Private::FMulticastDelegatePropertyParams NewProp_OnKilledWithCharacter;
 	static const UECodeGen_Private::FFloatPropertyParams NewProp_CurrentHealth;
 	static const UECodeGen_Private::FFloatPropertyParams NewProp_MaxHealth;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
-		{ &Z_Construct_UFunction_UHealthComponent_AffectHealth, "AffectHealth" }, // 483194432
-		{ &Z_Construct_UFunction_UHealthComponent_RIP, "RIP" }, // 3152287830
+		{ &Z_Construct_UFunction_UHealthComponent_AffectHealth, "AffectHealth" }, // 1740564768
+		{ &Z_Construct_UFunction_UHealthComponent_RIP, "RIP" }, // 161572404
 	};
 	static_assert(UE_ARRAY_COUNT(FuncInfo) < 2048);
 	static constexpr FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
@@ -266,13 +198,11 @@ struct Z_Construct_UClass_UHealthComponent_Statics
 };
 const UECodeGen_Private::FMulticastDelegatePropertyParams Z_Construct_UClass_UHealthComponent_Statics::NewProp_OnHealthChanged = { "OnHealthChanged", nullptr, (EPropertyFlags)0x0010000010080000, UECodeGen_Private::EPropertyGenFlags::InlineMulticastDelegate, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UHealthComponent, OnHealthChanged), Z_Construct_UDelegateFunction_NewRPG_OnHealthChanged__DelegateSignature, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_OnHealthChanged_MetaData), NewProp_OnHealthChanged_MetaData) }; // 4020296492
 const UECodeGen_Private::FMulticastDelegatePropertyParams Z_Construct_UClass_UHealthComponent_Statics::NewProp_OnDeath = { "OnDeath", nullptr, (EPropertyFlags)0x0010000010080000, UECodeGen_Private::EPropertyGenFlags::InlineMulticastDelegate, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UHealthComponent, OnDeath), Z_Construct_UDelegateFunction_NewRPG_OnDeath__DelegateSignature, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_OnDeath_MetaData), NewProp_OnDeath_MetaData) }; // 1266038960
-const UECodeGen_Private::FMulticastDelegatePropertyParams Z_Construct_UClass_UHealthComponent_Statics::NewProp_OnKilledWithCharacter = { "OnKilledWithCharacter", nullptr, (EPropertyFlags)0x0010000010080000, UECodeGen_Private::EPropertyGenFlags::InlineMulticastDelegate, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UHealthComponent, OnKilledWithCharacter), Z_Construct_UDelegateFunction_NewRPG_OnKilledWithCharacter__DelegateSignature, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_OnKilledWithCharacter_MetaData), NewProp_OnKilledWithCharacter_MetaData) }; // 3133076102
 const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_UHealthComponent_Statics::NewProp_CurrentHealth = { "CurrentHealth", nullptr, (EPropertyFlags)0x0010000000020015, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UHealthComponent, CurrentHealth), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_CurrentHealth_MetaData), NewProp_CurrentHealth_MetaData) };
 const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_UHealthComponent_Statics::NewProp_MaxHealth = { "MaxHealth", nullptr, (EPropertyFlags)0x0010000000000015, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UHealthComponent, MaxHealth), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_MaxHealth_MetaData), NewProp_MaxHealth_MetaData) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UHealthComponent_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UHealthComponent_Statics::NewProp_OnHealthChanged,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UHealthComponent_Statics::NewProp_OnDeath,
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UHealthComponent_Statics::NewProp_OnKilledWithCharacter,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UHealthComponent_Statics::NewProp_CurrentHealth,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UHealthComponent_Statics::NewProp_MaxHealth,
 };
@@ -317,10 +247,10 @@ UHealthComponent::~UHealthComponent() {}
 struct Z_CompiledInDeferFile_FID_Unreal_Projects_NewRPG_Source_NewRPG_HealthComponent_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UHealthComponent, UHealthComponent::StaticClass, TEXT("UHealthComponent"), &Z_Registration_Info_UClass_UHealthComponent, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UHealthComponent), 1561746684U) },
+		{ Z_Construct_UClass_UHealthComponent, UHealthComponent::StaticClass, TEXT("UHealthComponent"), &Z_Registration_Info_UClass_UHealthComponent, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UHealthComponent), 2664957515U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Unreal_Projects_NewRPG_Source_NewRPG_HealthComponent_h_2396192213(TEXT("/Script/NewRPG"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Unreal_Projects_NewRPG_Source_NewRPG_HealthComponent_h_2217835557(TEXT("/Script/NewRPG"),
 	Z_CompiledInDeferFile_FID_Unreal_Projects_NewRPG_Source_NewRPG_HealthComponent_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Unreal_Projects_NewRPG_Source_NewRPG_HealthComponent_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

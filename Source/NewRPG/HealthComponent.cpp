@@ -34,7 +34,7 @@ void UHealthComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActo
 }
 
 // Define the AffectHealth() function
-void UHealthComponent::AffectHealth(float HealthChangeAmount, ANewRPGCharacter* AttackingCharacter){
+void UHealthComponent::AffectHealth(float HealthChangeAmount){
 	CurrentHealth += HealthChangeAmount;
 	CurrentHealth = FMath::Clamp(CurrentHealth, 0, MaxHealth);
 	OnHealthChanged.Broadcast();
@@ -44,19 +44,17 @@ void UHealthComponent::AffectHealth(float HealthChangeAmount, ANewRPGCharacter* 
 	}
 
 	if (CurrentHealth <= 0) {
-		RIP(AttackingCharacter);
+		RIP();
 	}
 }
 
-void UHealthComponent::RIP(ANewRPGCharacter* AttackingCharacter) {
+void UHealthComponent::RIP() {
 	if (OwningCharacter && OwningCharacter->IsA(ANewRPGCharacter::StaticClass())) {
 	
 		OnDeath.Broadcast();
 		
 	}
-	else {
-		OnKilledWithCharacter.Broadcast(AttackingCharacter);
-	}
+
 
 
 }

@@ -9,7 +9,6 @@
 #include "UObject/ScriptMacros.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
-class ANewRPGCharacter;
 #ifdef NEWRPG_HealthComponent_generated_h
 #error "HealthComponent.generated.h already included, missing '#pragma once' in HealthComponent.h"
 #endif
@@ -21,10 +20,6 @@ NEWRPG_API void FOnHealthChanged_DelegateWrapper(const FMulticastScriptDelegate&
 
 #define FID_Unreal_Projects_NewRPG_Source_NewRPG_HealthComponent_h_11_DELEGATE \
 NEWRPG_API void FOnDeath_DelegateWrapper(const FMulticastScriptDelegate& OnDeath);
-
-
-#define FID_Unreal_Projects_NewRPG_Source_NewRPG_HealthComponent_h_12_DELEGATE \
-NEWRPG_API void FOnKilledWithCharacter_DelegateWrapper(const FMulticastScriptDelegate& OnKilledWithCharacter, ANewRPGCharacter* Character);
 
 
 #define FID_Unreal_Projects_NewRPG_Source_NewRPG_HealthComponent_h_17_RPC_WRAPPERS_NO_PURE_DECLS \
