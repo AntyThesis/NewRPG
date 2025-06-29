@@ -141,6 +141,12 @@
     <ClCompile Include="..\..\Source\NewRPG\NewRPGPlayerController.h">
       <Filter>Source\NewRPG</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\NewRPG\NPCBase.cpp">
+      <Filter>Source\NewRPG</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\NewRPG\NPCBase.h">
+      <Filter>Source\NewRPG</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\NewRPG\SpellProjectile.cpp">
       <Filter>Source\NewRPG</Filter>
     </ClCompile>

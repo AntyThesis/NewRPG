@@ -9,13 +9,13 @@
 #include "UObject/ScriptMacros.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
-class ANewRPGCharacter;
 #ifdef NEWRPG_EnemyBase_generated_h
 #error "EnemyBase.generated.h already included, missing '#pragma once' in EnemyBase.h"
 #endif
 #define NEWRPG_EnemyBase_generated_h
 
 #define FID_Unreal_Projects_NewRPG_Source_NewRPG_EnemyBase_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
+	DECLARE_FUNCTION(execGrantExp); \
 	DECLARE_FUNCTION(execEnemyKilled);
 
 

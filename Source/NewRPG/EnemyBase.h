@@ -40,6 +40,9 @@ public:
 
 
 	UFUNCTION(BlueprintCallable)
-	virtual void EnemyKilled(ANewRPGCharacter* AttackingCharacter);
+	virtual void EnemyKilled();
+
+	UFUNCTION(BlueprintCallable)
+	virtual void GrantExp(float ExpToGrant);
 
 };

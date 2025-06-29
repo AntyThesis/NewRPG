@@ -49,12 +49,7 @@ void UHealthComponent::AffectHealth(float HealthChangeAmount){
 }
 
 void UHealthComponent::RIP() {
-	if (OwningCharacter && OwningCharacter->IsA(ANewRPGCharacter::StaticClass())) {
-	
-		OnDeath.Broadcast();
-		
-	}
 
-
+	OnDeath.Broadcast();
 
 }

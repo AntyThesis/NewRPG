@@ -13,7 +13,6 @@ void EmptyLinkFunctionForGeneratedCodeEnemyBase() {}
 ENGINE_API UClass* Z_Construct_UClass_ACharacter();
 NEWRPG_API UClass* Z_Construct_UClass_AEnemyBase();
 NEWRPG_API UClass* Z_Construct_UClass_AEnemyBase_NoRegister();
-NEWRPG_API UClass* Z_Construct_UClass_ANewRPGCharacter_NoRegister();
 NEWRPG_API UClass* Z_Construct_UClass_UHealthComponent_NoRegister();
 UPackage* Z_Construct_UPackage__Script_NewRPG();
 // End Cross Module References
@@ -21,26 +20,14 @@ UPackage* Z_Construct_UPackage__Script_NewRPG();
 // Begin Class AEnemyBase Function EnemyKilled
 struct Z_Construct_UFunction_AEnemyBase_EnemyKilled_Statics
 {
-	struct EnemyBase_eventEnemyKilled_Parms
-	{
-		ANewRPGCharacter* AttackingCharacter;
-	};
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
 		{ "ModuleRelativePath", "EnemyBase.h" },
 	};
 #endif // WITH_METADATA
-	static const UECodeGen_Private::FObjectPropertyParams NewProp_AttackingCharacter;
-	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static const UECodeGen_Private::FFunctionParams FuncParams;
 };
-const UECodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_AEnemyBase_EnemyKilled_Statics::NewProp_AttackingCharacter = { "AttackingCharacter", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(EnemyBase_eventEnemyKilled_Parms, AttackingCharacter), Z_Construct_UClass_ANewRPGCharacter_NoRegister, METADATA_PARAMS(0, nullptr) };
-const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AEnemyBase_EnemyKilled_Statics::PropPointers[] = {
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AEnemyBase_EnemyKilled_Statics::NewProp_AttackingCharacter,
-};
-static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_AEnemyBase_EnemyKilled_Statics::PropPointers) < 2048);
-const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AEnemyBase_EnemyKilled_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AEnemyBase, nullptr, "EnemyKilled", nullptr, nullptr, Z_Construct_UFunction_AEnemyBase_EnemyKilled_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AEnemyBase_EnemyKilled_Statics::PropPointers), sizeof(Z_Construct_UFunction_AEnemyBase_EnemyKilled_Statics::EnemyBase_eventEnemyKilled_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020400, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AEnemyBase_EnemyKilled_Statics::Function_MetaDataParams), Z_Construct_UFunction_AEnemyBase_EnemyKilled_Statics::Function_MetaDataParams) };
-static_assert(sizeof(Z_Construct_UFunction_AEnemyBase_EnemyKilled_Statics::EnemyBase_eventEnemyKilled_Parms) < MAX_uint16);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AEnemyBase_EnemyKilled_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AEnemyBase, nullptr, "EnemyKilled", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020400, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AEnemyBase_EnemyKilled_Statics::Function_MetaDataParams), Z_Construct_UFunction_AEnemyBase_EnemyKilled_Statics::Function_MetaDataParams) };
 UFunction* Z_Construct_UFunction_AEnemyBase_EnemyKilled()
 {
 	static UFunction* ReturnFunction = nullptr;
@@ -52,13 +39,54 @@ UFunction* Z_Construct_UFunction_AEnemyBase_EnemyKilled()
 }
 DEFINE_FUNCTION(AEnemyBase::execEnemyKilled)
 {
-	P_GET_OBJECT(ANewRPGCharacter,Z_Param_AttackingCharacter);
 	P_FINISH;
 	P_NATIVE_BEGIN;
-	P_THIS->EnemyKilled(Z_Param_AttackingCharacter);
+	P_THIS->EnemyKilled();
 	P_NATIVE_END;
 }
 // End Class AEnemyBase Function EnemyKilled
+
+// Begin Class AEnemyBase Function GrantExp
+struct Z_Construct_UFunction_AEnemyBase_GrantExp_Statics
+{
+	struct EnemyBase_eventGrantExp_Parms
+	{
+		float ExpToGrant;
+	};
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "EnemyBase.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FFloatPropertyParams NewProp_ExpToGrant;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FFloatPropertyParams Z_Construct_UFunction_AEnemyBase_GrantExp_Statics::NewProp_ExpToGrant = { "ExpToGrant", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(EnemyBase_eventGrantExp_Parms, ExpToGrant), METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AEnemyBase_GrantExp_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AEnemyBase_GrantExp_Statics::NewProp_ExpToGrant,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_AEnemyBase_GrantExp_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AEnemyBase_GrantExp_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AEnemyBase, nullptr, "GrantExp", nullptr, nullptr, Z_Construct_UFunction_AEnemyBase_GrantExp_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AEnemyBase_GrantExp_Statics::PropPointers), sizeof(Z_Construct_UFunction_AEnemyBase_GrantExp_Statics::EnemyBase_eventGrantExp_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020400, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AEnemyBase_GrantExp_Statics::Function_MetaDataParams), Z_Construct_UFunction_AEnemyBase_GrantExp_Statics::Function_MetaDataParams) };
+static_assert(sizeof(Z_Construct_UFunction_AEnemyBase_GrantExp_Statics::EnemyBase_eventGrantExp_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_AEnemyBase_GrantExp()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AEnemyBase_GrantExp_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(AEnemyBase::execGrantExp)
+{
+	P_GET_PROPERTY(FFloatProperty,Z_Param_ExpToGrant);
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	P_THIS->GrantExp(Z_Param_ExpToGrant);
+	P_NATIVE_END;
+}
+// End Class AEnemyBase Function GrantExp
 
 // Begin Class AEnemyBase
 void AEnemyBase::StaticRegisterNativesAEnemyBase()
@@ -66,6 +94,7 @@ void AEnemyBase::StaticRegisterNativesAEnemyBase()
 	UClass* Class = AEnemyBase::StaticClass();
 	static const FNameNativePtrPair Funcs[] = {
 		{ "EnemyKilled", &AEnemyBase::execEnemyKilled },
+		{ "GrantExp", &AEnemyBase::execGrantExp },
 	};
 	FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
 }
@@ -97,7 +126,8 @@ struct Z_Construct_UClass_AEnemyBase_Statics
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
-		{ &Z_Construct_UFunction_AEnemyBase_EnemyKilled, "EnemyKilled" }, // 3061538753
+		{ &Z_Construct_UFunction_AEnemyBase_EnemyKilled, "EnemyKilled" }, // 848265488
+		{ &Z_Construct_UFunction_AEnemyBase_GrantExp, "GrantExp" }, // 3111288453
 	};
 	static_assert(UE_ARRAY_COUNT(FuncInfo) < 2048);
 	static constexpr FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
@@ -152,10 +182,10 @@ AEnemyBase::~AEnemyBase() {}
 struct Z_CompiledInDeferFile_FID_Unreal_Projects_NewRPG_Source_NewRPG_EnemyBase_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AEnemyBase, AEnemyBase::StaticClass, TEXT("AEnemyBase"), &Z_Registration_Info_UClass_AEnemyBase, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AEnemyBase), 1317253877U) },
+		{ Z_Construct_UClass_AEnemyBase, AEnemyBase::StaticClass, TEXT("AEnemyBase"), &Z_Registration_Info_UClass_AEnemyBase, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AEnemyBase), 765713804U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Unreal_Projects_NewRPG_Source_NewRPG_EnemyBase_h_3034440489(TEXT("/Script/NewRPG"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Unreal_Projects_NewRPG_Source_NewRPG_EnemyBase_h_3853772631(TEXT("/Script/NewRPG"),
 	Z_CompiledInDeferFile_FID_Unreal_Projects_NewRPG_Source_NewRPG_EnemyBase_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Unreal_Projects_NewRPG_Source_NewRPG_EnemyBase_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

@@ -4,6 +4,7 @@
 #include "EnemyBase.h"
 #include "HealthComponent.h"
 #include "NewRPGCharacter.h"
+#include "Kismet/GameplayStatics.h"
 #include "Components/CapsuleComponent.h"
 #include "EXPComponent.h"
 
@@ -32,6 +33,7 @@ void AEnemyBase::BeginPlay()
 	if (HealthComponent) {
 
 		HealthComponent->CurrentHealth = HealthComponent->MaxHealth;
+		HealthComponent->OnDeath.AddDynamic(this, &AEnemyBase::EnemyKilled);
 	
 	}
 	else {
@@ -58,14 +60,29 @@ void AEnemyBase::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent
 }
 
 // {{{Refactor so that every player gets exp when an enemy dies}}}
-void AEnemyBase::EnemyKilled(ANewRPGCharacter* AttackingCharacter) {
+void AEnemyBase::EnemyKilled() {
 
-
-	if (AttackingCharacter) {
-		AttackingCharacter->EXPComponent->EarnEXP(ExperienceToGive);
+		
 		GetMesh()->SetSimulatePhysics(true);
 		GetMesh()->SetCollisionEnabled(ECollisionEnabled::QueryAndPhysics);
 
 		GetCapsuleComponent()->SetCollisionEnabled(ECollisionEnabled::NoCollision);
+
+		GrantExp(ExperienceToGive);
+	
+}
+
+
+void AEnemyBase::GrantExp(float ExpToGrant) {
+	TArray<AActor*> FoundPlayers;
+
+	UGameplayStatics::GetAllActorsOfClass(GetWorld(), ANewRPGCharacter::StaticClass(), FoundPlayers);
+
+	if (FoundPlayers.Num() > 0) {
+		for (AActor* PossiblePlayer : FoundPlayers) {
+			ANewRPGCharacter* Player = Cast<ANewRPGCharacter>(PossiblePlayer);
+
+			Player->EXPComponent->EarnEXP(ExpToGrant);
+		}
 	}
 }
