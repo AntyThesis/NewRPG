@@ -91,7 +91,7 @@ void ANewRPGCharacter::SphereOverlap() {
 
 
 	// Call the overlap and Set bHit to equal the hit result
-	bool bHit = UKismetSystemLibrary::SphereOverlapActors(GetWorld(), SphereCenter, Radius, ObjectTypes, AItemBase::StaticClass(), ActorsToIgnore, OutActors);
+	bool bHit = UKismetSystemLibrary::SphereOverlapActors(GetWorld(), SphereCenter, Radius, ObjectTypes, nullptr, ActorsToIgnore, OutActors);
 
 
 	// if there is a hit and the hit actor inherits from the Interact Interface print the name of the hit actor to the screen and call Interact() on that actor
