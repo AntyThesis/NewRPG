@@ -2,8 +2,7 @@
 
 
 #include "NPCBase.h"
-#include "Blueprint/UserWidget.h"
-#include <Kismet/GameplayStatics.h>
+
 #include "NewRPGCharacter.h"
 #include "GameFramework/CharacterMovementComponent.h"
 
@@ -19,10 +18,6 @@ ANPCBase::ANPCBase()
 void ANPCBase::BeginPlay()
 {
 	Super::BeginPlay();
-
-	if (WidgetClass) {
-		ConversationWidget = CreateWidget<UUserWidget>(GetWorld(), WidgetClass);
-	}
 	
 }
 
@@ -35,18 +30,6 @@ void ANPCBase::Tick(float DeltaTime)
 
 
 void ANPCBase::Interact(ANewRPGCharacter* InteractingCharacter) {
-	if (ConversationWidget && !ConversationWidget->IsInViewport()) {
-		ConversationWidget->AddToViewport();
-		APlayerController* PlayerController = UGameplayStatics::GetPlayerController(GetWorld(), 0);
-
-		if (PlayerController) {
-			PlayerController->SetInputMode(FInputModeUIOnly());
-			InteractingCharacter->GetCharacterMovement()->DisableMovement();
-			//PlayerController->bShowMouseCursor = true;
-		}
-		if (GEngine) {
-			GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Green,TEXT("Working"));
-		}
-	}
+	InteractingCharacter->ShowConversationWidget();
 }
 

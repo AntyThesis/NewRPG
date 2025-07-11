@@ -14,6 +14,7 @@
 #include "InventoryComponent.h"
 #include "ManaComponent.h"
 #include "ItemBase.h"
+#include "Blueprint/UserWidget.h"
 #include "AlignmentComponent.h"
 #include "EXPComponent.h"
 #include "Kismet/KismetSystemLibrary.h"
@@ -134,6 +135,8 @@ void ANewRPGCharacter::BeginPlay() {
 	else {
 		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Blue, TEXT("No Mana component found"));
 	}
+
+	ConversationWidget = CreateWidget<UUserWidget>(GetWorld(),WidgetClass);
 }
 
 
@@ -150,4 +153,10 @@ void ANewRPGCharacter::Death() {
 		PlayerController->DisableInput(PlayerController);
 	}
 
+}
+
+void ANewRPGCharacter::ShowConversationWidget() {
+	if (ConversationWidget && !ConversationWidget->IsInViewport()) {
+		ConversationWidget->AddToViewport();
+	}
 }

@@ -4,7 +4,6 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
-#include "Blueprint/UserWidget.h"
 #include "Interactable.h"
 #include "NPCBase.generated.h"
 
@@ -16,11 +15,6 @@ class NEWRPG_API ANPCBase : public AActor, public IInteractable
 public:	
 	// Sets default values for this actor's properties
 	ANPCBase();
-
-	UUserWidget* ConversationWidget;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "UI")
-	TSubclassOf<UUserWidget> WidgetClass;
 
 protected:
 	// Called when the game starts or when spawned

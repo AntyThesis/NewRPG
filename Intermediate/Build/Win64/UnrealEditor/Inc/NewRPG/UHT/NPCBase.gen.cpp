@@ -10,13 +10,11 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeNPCBase() {}
 
 // Begin Cross Module References
-COREUOBJECT_API UClass* Z_Construct_UClass_UClass();
 ENGINE_API UClass* Z_Construct_UClass_AActor();
 NEWRPG_API UClass* Z_Construct_UClass_ANewRPGCharacter_NoRegister();
 NEWRPG_API UClass* Z_Construct_UClass_ANPCBase();
 NEWRPG_API UClass* Z_Construct_UClass_ANPCBase_NoRegister();
 NEWRPG_API UClass* Z_Construct_UClass_UInteractable_NoRegister();
-UMG_API UClass* Z_Construct_UClass_UUserWidget_NoRegister();
 UPackage* Z_Construct_UPackage__Script_NewRPG();
 // End Cross Module References
 
@@ -84,13 +82,7 @@ struct Z_Construct_UClass_ANPCBase_Statics
 		{ "IncludePath", "NPCBase.h" },
 		{ "ModuleRelativePath", "NPCBase.h" },
 	};
-	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_WidgetClass_MetaData[] = {
-		{ "Category", "UI" },
-		{ "ModuleRelativePath", "NPCBase.h" },
-	};
 #endif // WITH_METADATA
-	static const UECodeGen_Private::FClassPropertyParams NewProp_WidgetClass;
-	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
 		{ &Z_Construct_UFunction_ANPCBase_Interact, "Interact" }, // 1693775687
@@ -102,11 +94,6 @@ struct Z_Construct_UClass_ANPCBase_Statics
 	};
 	static const UECodeGen_Private::FClassParams ClassParams;
 };
-const UECodeGen_Private::FClassPropertyParams Z_Construct_UClass_ANPCBase_Statics::NewProp_WidgetClass = { "WidgetClass", nullptr, (EPropertyFlags)0x0014000000000005, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ANPCBase, WidgetClass), Z_Construct_UClass_UClass, Z_Construct_UClass_UUserWidget_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_WidgetClass_MetaData), NewProp_WidgetClass_MetaData) };
-const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ANPCBase_Statics::PropPointers[] = {
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ANPCBase_Statics::NewProp_WidgetClass,
-};
-static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_ANPCBase_Statics::PropPointers) < 2048);
 UObject* (*const Z_Construct_UClass_ANPCBase_Statics::DependentSingletons[])() = {
 	(UObject* (*)())Z_Construct_UClass_AActor,
 	(UObject* (*)())Z_Construct_UPackage__Script_NewRPG,
@@ -121,11 +108,11 @@ const UECodeGen_Private::FClassParams Z_Construct_UClass_ANPCBase_Statics::Class
 	&StaticCppClassTypeInfo,
 	DependentSingletons,
 	FuncInfo,
-	Z_Construct_UClass_ANPCBase_Statics::PropPointers,
+	nullptr,
 	InterfaceParams,
 	UE_ARRAY_COUNT(DependentSingletons),
 	UE_ARRAY_COUNT(FuncInfo),
-	UE_ARRAY_COUNT(Z_Construct_UClass_ANPCBase_Statics::PropPointers),
+	0,
 	UE_ARRAY_COUNT(InterfaceParams),
 	0x009000A4u,
 	METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ANPCBase_Statics::Class_MetaDataParams), Z_Construct_UClass_ANPCBase_Statics::Class_MetaDataParams)
@@ -150,10 +137,10 @@ ANPCBase::~ANPCBase() {}
 struct Z_CompiledInDeferFile_FID_Unreal_Projects_NewRPG_Source_NewRPG_NPCBase_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_ANPCBase, ANPCBase::StaticClass, TEXT("ANPCBase"), &Z_Registration_Info_UClass_ANPCBase, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ANPCBase), 3140301068U) },
+		{ Z_Construct_UClass_ANPCBase, ANPCBase::StaticClass, TEXT("ANPCBase"), &Z_Registration_Info_UClass_ANPCBase, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ANPCBase), 3920766825U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Unreal_Projects_NewRPG_Source_NewRPG_NPCBase_h_245904838(TEXT("/Script/NewRPG"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Unreal_Projects_NewRPG_Source_NewRPG_NPCBase_h_1887175163(TEXT("/Script/NewRPG"),
 	Z_CompiledInDeferFile_FID_Unreal_Projects_NewRPG_Source_NewRPG_NPCBase_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Unreal_Projects_NewRPG_Source_NewRPG_NPCBase_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

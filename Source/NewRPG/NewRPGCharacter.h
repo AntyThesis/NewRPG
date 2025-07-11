@@ -37,7 +37,11 @@ public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Custom Components")
 	UEXPComponent* EXPComponent;
 
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "UI")
+	UUserWidget* ConversationWidget;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "UI")
+	TSubclassOf<UUserWidget> WidgetClass;
 
 
 	
@@ -58,6 +62,9 @@ public:
 
 	UFUNCTION(BlueprintCallable)
 	virtual void Death();
+
+	UFUNCTION(BlueprintCallable)
+	virtual void ShowConversationWidget();
 
 private:
 	/** Top down camera */
